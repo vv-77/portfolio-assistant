@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">💼</span>
+                    <span class="logo-text">Portfolio</span>
+                </a>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Главная</a></li>
+                    <li><a href="projects.html" class="nav-link">Проекты</a></li>
+                    <li><a href="services.html" class="nav-link active">Услуги</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Контакты</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="Тема">
+                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Мои услуги</h1>
+            <p class="page-subtitle">Что я могу сделать для вас</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="services-grid">
+
+                <!-- Service 1: Telegram Bot -->
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3 class="service-title">Telegram-бот под ключ</h3>
+                    <p class="service-desc">
+                        Разработка Telegram-бота с нуля: от простых команд до сложных AI-интеграций.
+                        Включает проектирование, разработку, тестирование и деплой.
+                    </p>
+                    <div class="service-price">от 5 000 ₽</div>
+                </div>
+
+                <!-- Service 2: AI Integration -->
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3 class="service-title">Интеграция AI-функций</h3>
+                    <p class="service-desc">
+                        Добавление AI-возможностей в ваш проект: умные ответы, генерация контента,
+                        анализ данных, автоматизация с использованием LLM.
+                    </p>
+                    <div class="service-price">от 3 000 ₽</div>
+                </div>
+
+                <!-- Service 3: MVP Development -->
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3 class="service-title">Быстрое прототипирование</h3>
+                    <p class="service-desc">
+                        Создание MVP за 1-2 недели. Идеально для проверки гипотез и быстрого выхода на рынок.
+                        Использую AI-инструменты для максимальной скорости.
+                    </p>
+                    <div class="service-price">от 10 000 ₽</div>
+                </div>
+
+                <!-- Service 4: Automation -->
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">Автоматизация процессов</h3>
+                    <p class="service-desc">
+                        Автоматизация рутинных задач: обработка данных, уведомления, парсинг,
+                        интеграции между сервисами. Экономлю ваше время.
+                    </p>
+                    <div class="service-price">от 2 000 ₽</div>
+                </div>
+
+                <!-- Service 5: Consultation -->
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3 class="service-title">Консультация</h3>
+                    <p class="service-desc">
+                        Помогу разобраться с архитектурой, выбрать технологии, оптимизировать код.
+                        Расскажу про AI-инструменты и vibe coding.
+                    </p>
+                    <div class="service-price">500 ₽/час</div>
+                </div>
+
+                <!-- Service 6: Support -->
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="service-title">Поддержка и доработка</h3>
+                    <p class="service-desc">
+                        Исправлю баги, добавлю новые функции, оптимизирую производительность.
+                        Работаю с вашим существующим кодом.
+                    </p>
+                    <div class="service-price">от 1 000 ₽</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">1-2</span>
+                    <span class="stat-label">недели на MVP</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24ч</span>
+                    <span class="stat-label">время отклика</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">гарантия качества</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">© 2026 Portfolio. Сделано с 💜 и AI</p>
+                <p class="footer-subtext">Vibe Coding enabled</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
