@@ -1,247 +1,73 @@
-<!DOCTYPE html>
+п»ї<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Портфолио AI Agent Team</title>
+  <title>РџРѕСЂС‚С„РѕР»РёРѕ AI Agent Team</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ===== Custom styles for index ===== */
-    .hero-simple {
-      padding: 100px 0 60px;
-      background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
-    }
-    .hero-content {
-      max-width: 980px;
-      margin: auto;
-      padding: 0 24px;
-    }
-    .eyebrow {
-      margin: 0;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.85rem;
-      color: var(--primary);
-      font-weight: 700;
-    }
-    .title {
-      margin: 0 0 16px;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      line-height: 1.02;
-      font-weight: 800;
-    }
-    .title .highlight {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .lead {
-      margin: 0 0 24px;
-      color: var(--text-secondary);
-      line-height: 1.8;
-      max-width: 760px;
-      font-size: 1.1rem;
-    }
-    .tech-badges {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-    .tech-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      background: var(--primary);
-      color: #fff;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-    .button {
-      margin-top: 24px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 999px;
-      padding: 14px 28px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: var(--transition);
-    }
-    .button:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-    .card-grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      margin-top: 48px;
-    }
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 28px;
-      text-decoration: none;
-      color: inherit;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-    .card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      opacity: 0;
-      transition: var(--transition);
-    }
-    .card:hover::before {
-      opacity: 1;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--primary);
-    }
-    .card h2 {
-      margin: 0 0 12px;
-      font-size: 1.35rem;
-      font-weight: 700;
-    }
-    .card p {
-      margin: 0;
-      color: var(--text-secondary);
-      line-height: 1.75;
-    }
-    .card-icon {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
-    }
-    .footer-simple {
-      padding: 40px 0;
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border);
-      margin-top: 60px;
-    }
-    .footer-content {
-      max-width: 980px;
-      margin: auto;
-      padding: 0 24px;
-      text-align: center;
-    }
-    .footer-text {
-      font-weight: 500;
-      margin-bottom: 8px;
-    }
-    .footer-tech {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      font-size: 0.875rem;
-      color: var(--text-muted);
-    }
-    .footer-tech span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 12px;
-      background: var(--bg-card);
-      border-radius: 999px;
-      border: 1px solid var(--border);
-    }
-    @media (max-width: 768px) {
-      .hero-simple {
-        padding: 80px 0 40px;
-      }
-      .title {
-        font-size: 2rem;
-      }
-      .tech-badges {
-        justify-content: flex-start;
-      }
-      .footer-tech {
-        flex-direction: column;
-        gap: 8px;
-      }
-    }
+    .hero-simple { padding: 100px 0 60px; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary)); }
+    .hero-content { max-width: 980px; margin: auto; padding: 0 24px; }
+    .eyebrow { margin: 0; text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.85rem; color: var(--primary); font-weight: 700; }
+    .title { margin: 0 0 16px; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.02; font-weight: 800; }
+    .title .highlight { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .lead { margin: 0 0 24px; color: var(--text-secondary); line-height: 1.8; max-width: 760px; font-size: 1.1rem; }
+    .button { margin-top: 24px; display: inline-flex; align-items: center; gap: 10px; background: var(--primary); color: #fff; border: none; border-radius: 999px; padding: 14px 28px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: var(--transition); }
+    .button:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .card-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 48px; }
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 28px; text-decoration: none; color: inherit; transition: var(--transition); position: relative; overflow: hidden; }
+    .card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--secondary)); opacity: 0; transition: var(--transition); }
+    .card:hover::before { opacity: 1; }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+    .card h2 { margin: 0 0 12px; font-size: 1.35rem; font-weight: 700; }
+    .card p { margin: 0; color: var(--text-secondary); line-height: 1.75; }
+    .card-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .footer-simple { padding: 40px 0; background: var(--bg-secondary); border-top: 1px solid var(--border); margin-top: 60px; }
+    .footer-content { max-width: 980px; margin: auto; padding: 0 24px; text-align: center; }
+    .footer-text { font-weight: 500; margin-bottom: 8px; }
+    .footer-subtext { font-size: 0.875rem; color: var(--text-muted); }
+    @media (max-width: 768px) { .hero-simple { padding: 80px 0 40px; } .title { font-size: 2rem; } }
   </style>
 </head>
 <body data-theme="light">
   <main>
     <section class="hero-simple">
       <div class="hero-content">
-        <p class="eyebrow">Портфолио</p>
-        <h1 class="title">Проекты и <span class="highlight">AI-ассистенты</span></h1>
-        <p class="lead">Создаю AI-ассистентов с помощью конструкторов и LLM (Salebot, Savvi, Qwen, Minimax, Kimi...). Изучаю интеграции с различными LLM для разных задач. Здесь каждый проект открывается по своей отдельной странице.</p>
-        
-        <div class="tech-badges">
-          <span class="tech-badge">? HTML5</span>
-          <span class="tech-badge">?? CSS3</span>
-          <span class="tech-badge">?? Vanilla JS</span>
-          <span class="tech-badge">?? GitHub Pages</span>
-        </div>
-        
-        <a class="button" href="projects.html">
-          Перейти к каталогу
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
+        <p class="eyebrow">РџРѕСЂС‚С„РѕР»РёРѕ</p>
+        <h1 class="title">РџСЂРѕРµРєС‚С‹ Рё <span class="highlight">AI-Р°СЃСЃРёСЃС‚РµРЅС‚С‹</span></h1>
+        <p class="lead">РЎРѕР·РґР°СЋ AI-Р°СЃСЃРёСЃС‚РµРЅС‚РѕРІ СЃ РїРѕРјРѕС‰СЊСЋ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРѕРІ Рё LLM (Salebot, Savvi, Qwen, Minimax, Kimi...). РР·СѓС‡Р°СЋ РёРЅС‚РµРіСЂР°С†РёРё СЃ СЂР°Р·Р»РёС‡РЅС‹РјРё LLM РґР»СЏ СЂР°Р·РЅС‹С… Р·Р°РґР°С‡. Р—РґРµСЃСЊ РєР°Р¶РґС‹Р№ РїСЂРѕРµРєС‚ РѕС‚РєСЂС‹РІР°РµС‚СЃСЏ РїРѕ СЃРІРѕРµР№ РѕС‚РґРµР»СЊРЅРѕР№ СЃС‚СЂР°РЅРёС†Рµ.</p>
+        <a class="button" href="projects.html">РџРµСЂРµР№С‚Рё Рє РєР°С‚Р°Р»РѕРіСѓ в†’</a>
       </div>
     </section>
-
     <div class="page" style="max-width: 980px; margin: auto; padding: 48px 24px;">
       <div class="card-grid">
         <a class="card" href="recipe_bot_llm/">
-          <div class="card-icon">??</div>
-          <h2>Ням-Ням — Бот рецептов (LLM)</h2>
-          <p>Telegram-бот с Deepseek API, генерацией рецептов и мультимодальным поиском. Отдельная страница проекта и ссылка на исходник.</p>
+          <div class="card-icon">рџ¤–</div>
+          <h2>РќСЏРј-РќСЏРј вЂ” Р‘РѕС‚ СЂРµС†РµРїС‚РѕРІ (LLM)</h2>
+          <p>Telegram-Р±РѕС‚ СЃ Deepseek API, РіРµРЅРµСЂР°С†РёРµР№ СЂРµС†РµРїС‚РѕРІ Рё РјСѓР»СЊС‚РёРјРѕРґР°Р»СЊРЅС‹Рј РїРѕРёСЃРєРѕРј.</p>
         </a>
         <a class="card" href="saas/">
-          <div class="card-icon">??</div>
+          <div class="card-icon">рџ’Ў</div>
           <h2>Mini-SaaS Scout PRO</h2>
-          <p>Ищет лучшие идеи и ниши: быстро сделать, дёшево собрать, легко продать, низкая конкуренция. Работает бесплатно в Local mode и через Gemini API в AI mode.</p>
+          <p>РС‰РµС‚ Р»СѓС‡С€РёРµ РёРґРµРё Рё РЅРёС€Рё: Р±С‹СЃС‚СЂРѕ СЃРґРµР»Р°С‚СЊ, РґС‘С€РµРІРѕ СЃРѕР±СЂР°С‚СЊ, Р»РµРіРєРѕ РїСЂРѕРґР°С‚СЊ.</p>
         </a>
         <a class="card" href="ostrov-okon/">
-          <div class="card-icon">??</div>
-          <h2>Остров Окон — AI-консультант</h2>
-          <p>Savvi-конструктор и Qwen LLM для продающего AI-консультанта по окнам и стеклопакетам.</p>
+          <div class="card-icon">рџЄџ</div>
+          <h2>РћСЃС‚СЂРѕРІ РћРєРѕРЅ вЂ” AI-РєРѕРЅСЃСѓР»СЊС‚Р°РЅС‚</h2>
+          <p>Savvi-РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Рё Qwen LLM РґР»СЏ РїСЂРѕРґР°СЋС‰РµРіРѕ AI-РєРѕРЅСЃСѓР»СЊС‚Р°РЅС‚Р° РїРѕ РѕРєРЅР°Рј.</p>
         </a>
         <a class="card" href="mortgage-calculator/">
-          <div class="card-icon">??</div>
-          <h2>Ипотечный калькулятор</h2>
-          <p>Веб-калькулятор с расчётом графика, экспортом в Excel и детальным описанием проекта.</p>
+          <div class="card-icon">рџЏ </div>
+          <h2>РРїРѕС‚РµС‡РЅС‹Р№ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂ</h2>
+          <p>Р’РµР±-РєР°Р»СЊРєСѓР»СЏС‚РѕСЂ СЃ СЂР°СЃС‡С‘С‚РѕРј РіСЂР°С„РёРєР°, СЌРєСЃРїРѕСЂС‚РѕРј РІ Excel Рё РґРµС‚Р°Р»СЊРЅС‹Рј РѕРїРёСЃР°РЅРёРµРј.</p>
         </a>
       </div>
     </div>
   </main>
-
   <footer class="footer-simple">
     <div class="footer-content">
-      <p class="footer-text">?? Портфолио AI Agent Team</p>
-      <div class="footer-tech">
-        <span>? Сделано на HTML5</span>
-        <span>?? CSS3</span>
-        <span>?? Vanilla JavaScript</span>
-        <span>?? GitHub Pages</span>
-      </div>
-      <p style="margin-top: 12px; font-size: 0.85rem; color: var(--text-muted);">
-        Без фреймворков • Чистый код • Адаптивный дизайн
-      </p>
+      <p class="footer-text">рџ’ј РџРѕСЂС‚С„РѕР»РёРѕ AI Agent Team</p>
+      <p class="footer-subtext">В© 2024. Р‘РµР· С„СЂРµР№РјРІРѕСЂРєРѕРІ вЂў Р§РёСЃС‚С‹Р№ РєРѕРґ вЂў РђРґР°РїС‚РёРІРЅС‹Р№ РґРёР·Р°Р№РЅ</p>
     </div>
   </footer>
 </body>
