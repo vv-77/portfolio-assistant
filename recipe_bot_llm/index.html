@@ -18,7 +18,8 @@
     .section li { margin-bottom: 10px; }
     .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
     .screenshots { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
-    .screenshots img { width: 100%; max-width: 420px; border-radius: 18px; box-shadow: 0 12px 28px rgba(15,23,42,.12); }
+    .screenshots a { display: block; width: calc(33.33% - 10px); min-width: 180px; text-decoration: none; }
+    .screenshots img { width: 100%; height: auto; border-radius: 18px; object-fit: cover; box-shadow: 0 12px 28px rgba(15,23,42,.12); cursor: zoom-in; }
     .screenshot-note { color: #475569; margin-top: 12px; }
     .button { text-decoration: none; background: #2563eb; color: #fff; padding: 12px 18px; border-radius: 12px; font-weight: 600; }
   </style>
@@ -49,9 +50,9 @@
     <section class="section">
       <h2>Скриншоты</h2>
       <div class="screenshots">
-        <img src="screenshots/photo_2026-04-11_11-24-15.jpg" alt="Ням-Ням — экран 1" />
-        <img src="screenshots/photo_2026-04-11_11-24-25.jpg" alt="Ням-Ням — экран 2" />
-        <img src="screenshots/photo_2026-04-11_11-24-31.jpg" alt="Ням-Ням — экран 3" />
+        <a href="screenshots/photo_2026-04-11_11-24-15.jpg" target="_blank" rel="noopener noreferrer"><img src="screenshots/photo_2026-04-11_11-24-15.jpg" alt="Ням-Ням — экран 1" /></a>
+        <a href="screenshots/photo_2026-04-11_11-24-25.jpg" target="_blank" rel="noopener noreferrer"><img src="screenshots/photo_2026-04-11_11-24-25.jpg" alt="Ням-Ням — экран 2" /></a>
+        <a href="screenshots/photo_2026-04-11_11-24-31.jpg" target="_blank" rel="noopener noreferrer"><img src="screenshots/photo_2026-04-11_11-24-31.jpg" alt="Ням-Ням — экран 3" /></a>
       </div>
     </section>
     <section class="section">
