@@ -30,6 +30,8 @@
     .footer-content { max-width: 980px; margin: auto; padding: 0 24px; text-align: center; }
     .footer-text { font-weight: 500; margin-bottom: 8px; }
     .footer-subtext { font-size: 0.875rem; color: var(--text-muted); }
+    .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--text-primary); color: var(--bg-primary); padding: 16px 32px; border-radius: 12px; font-weight: 600; box-shadow: var(--shadow-lg); opacity: 0; transition: all 0.3s ease; z-index: 9999; }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
     @media (max-width: 768px) { .hero-simple { padding: 80px 0 40px; } .title { font-size: 2rem; } }
   </style>
 </head>
@@ -65,6 +67,11 @@
           <h2>Ипотечный калькулятор</h2>
           <p>Веб-калькулятор с графиком, Excel-экспортом и расчётом переплат.</p>
         </a>
+        <div class="card" data-toast="Вы на этом сайте 💼">
+          <div class="card-icon">💼</div>
+          <h2>Сайт-портфолио</h2>
+          <p>Лендинг с каталогом проектов: чистый HTML/CSS/JS, адаптивный дизайн, тёмная тема.</p>
+        </div>
       </div>
     </div>
   </main>
@@ -74,5 +81,17 @@
       <p class="footer-subtext">© 2026. Без фреймворков • Чистый код • Адаптивный дизайн</p>
     </div>
   </footer>
+  <div class="toast" id="toast"></div>
+  <script>
+    document.querySelectorAll(".card[data-toast]").forEach(function(card) {
+      card.addEventListener("click", function(e) {
+        e.preventDefault();
+        var toast = document.getElementById("toast");
+        toast.textContent = card.getAttribute("data-toast");
+        toast.classList.add("show");
+        setTimeout(function() { toast.classList.remove("show"); }, 2500);
+      });
+    });
+  </script>
 </body>
 </html>
