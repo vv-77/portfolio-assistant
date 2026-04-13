@@ -12,7 +12,7 @@
     .breadcrumbs { margin-bottom: 24px; font-size: 0.95rem; color: var(--text-secondary); }
     .breadcrumbs a { color: var(--primary); text-decoration: none; font-weight: 600; }
     .project-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 24px; max-width: 980px; margin: 0 auto; padding: 48px 24px; }
-    .project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 28px; text-decoration: none; color: inherit; display: block; transition: var(--transition); position: relative; overflow: hidden; }
+    .project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 28px; text-decoration: none; color: inherit; display: block; transition: var(--transition); position: relative; overflow: hidden; cursor: pointer; }
     .project-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--secondary)); opacity: 0; transition: var(--transition); }
     .project-card:hover::before { opacity: 1; }
     .project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: var(--primary); }
@@ -27,6 +27,8 @@
     .footer-content { max-width: 980px; margin: auto; padding: 0 24px; text-align: center; }
     .footer-text { font-weight: 500; margin-bottom: 8px; }
     .footer-subtext { font-size: 0.875rem; color: var(--text-muted); }
+    .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--text-primary); color: var(--bg-primary); padding: 16px 32px; border-radius: 12px; font-weight: 600; box-shadow: var(--shadow-lg); opacity: 0; transition: all 0.3s ease; z-index: 9999; }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
     @media (max-width: 768px) { .page-header { padding: 80px 0 40px; } .page-title { font-size: 1.8rem; } .project-list { padding: 32px 16px; } }
   </style>
 </head>
@@ -60,11 +62,13 @@
         <p>Веб-калькулятор с расчётом графика, экспортом в Excel и подробной демонстрацией.</p>
         <div class="project-meta"><span class="project-tag">Python</span><span class="project-tag">HTML</span><span class="project-tag">Excel</span><span class="project-tag">Adaptive</span></div>
       </a></li>
-      <li><a class="project-card" href="index.html">
-        <h2>💼 Сайт-портфолио</h2>
-        <p>Лендинг с каталогом проектов: чистый HTML/CSS/JS, адаптивный дизайн, тёмная тема.</p>
-        <div class="project-meta"><span class="project-tag">HTML5</span><span class="project-tag">CSS3</span><span class="project-tag">Vanilla JS</span><span class="project-tag">GitHub Pages</span></div>
-      </a></li>
+      <li>
+        <div class="project-card" data-toast="Вы на этом сайте 💼">
+          <h2>💼 Сайт-портфолио</h2>
+          <p>Лендинг с каталогом проектов: чистый HTML/CSS/JS, адаптивный дизайн, тёмная тема.</p>
+          <div class="project-meta"><span class="project-tag">HTML5</span><span class="project-tag">CSS3</span><span class="project-tag">Vanilla JS</span><span class="project-tag">GitHub Pages</span></div>
+        </div>
+      </li>
     </ul>
     <div class="nav">
       <a href="index.html">← На главную</a>
@@ -74,8 +78,20 @@
   <footer class="footer-simple">
     <div class="footer-content">
       <p class="footer-text">💼 Портфолио AI Agent Team</p>
-      <p class="footer-subtext">© 2024. Без фреймворков • Чистый код • Адаптивный дизайн</p>
+      <p class="footer-subtext">© 2026. Без фреймворков • Чистый код • Адаптивный дизайн</p>
     </div>
   </footer>
+  <div class="toast" id="toast"></div>
+  <script>
+    document.querySelectorAll('.project-card[data-toast]').forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        const toast = document.getElementById('toast');
+        toast.textContent = card.getAttribute('data-toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2500);
+      });
+    });
+  </script>
 </body>
 </html>
