@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ням-Ням — Бот рецептов (LLM)</title>
+  <style>
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #f8fafc; color: #111827; }
+    .page { max-width: 860px; margin: auto; padding: 32px 24px; }
+    .breadcrumbs { margin-bottom: 20px; font-size: .95rem; color: #475569; }
+    .breadcrumbs a { color: #2563eb; text-decoration: none; }
+    .badge { display: inline-flex; align-items: center; gap: .5rem; padding: 8px 14px; background: #e0f2fe; color: #0369a1; border-radius: 999px; font-weight: 700; }
+    h1 { margin: 10px 0 12px; font-size: clamp(2rem, 4vw, 2.8rem); }
+    .text { color: #475569; line-height: 1.8; margin: 0; }
+    .section { margin: 30px 0; }
+    .section h2 { margin: 0 0 12px; font-size: 1.4rem; }
+    .section ul { margin: 0; padding-left: 20px; color: #475569; }
+    .section li { margin-bottom: 10px; }
+    .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .button { text-decoration: none; background: #2563eb; color: #fff; padding: 12px 18px; border-radius: 12px; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="breadcrumbs"><a href="../index.html">Главная</a> → <a href="../projects.html">Каталог проектов</a> → Ням-Ням (LLM)</div>
+    <span class="badge">Проект</span>
+    <h1>Ням-Ням — Бот рецептов (Deepseek)</h1>
+    <p class="text">Telegram-бот, который предлагает рецепты, ищет по фото и работает через Deepseek API. Для портфолио важно не только код, но и понятное описание, навигация и демонстрация.</p>
+    <section class="section">
+      <h2>Что делает проект</h2>
+      <ul>
+        <li>Принимает текстовые запросы и возвращает рецепты.</li>
+        <li>Работает в Telegram и использует Deepseek для LLM-подсказок.</li>
+        <li>Есть поиск изображений и поддержка мультимодальных сценариев.</li>
+      </ul>
+    </section>
+    <section class="section">
+      <h2>Технологии</h2>
+      <ul>
+        <li>Python</li>
+        <li>Telegram Bot API</li>
+        <li>Deepseek API</li>
+        <li>Асинхронный aiogram, логирование и файл конфигурации</li>
+      </ul>
+    </section>
+    <section class="section">
+      <h2>Где посмотреть код</h2>
+      <div class="links">
+        <a class="button" href="../Projects/recipe_bot_llm/">Исходники проекта</a>
+        <a class="button" href="../projects.html">Вернуться в каталог</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

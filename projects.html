@@ -1,176 +1,58 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Проекты - Portfolio Валерия</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Portfolio Assistant</title>
+  <style>
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #eef2ff; color: #111827; }
+    .page { max-width: 980px; margin: auto; padding: 28px 24px; }
+    .breadcrumbs { margin-bottom: 18px; font-size: .95rem; color: #475569; }
+    .breadcrumbs a { color: #2563eb; text-decoration: none; }
+    h1 { margin: 0 0 14px; font-size: clamp(2rem, 4vw, 3rem); }
+    .intro { margin: 0 0 28px; color: #4b5563; line-height: 1.75; }
+    .project-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+    .project-card { background: #fff; border: 1px solid #dbeafe; border-radius: 20px; padding: 24px; text-decoration: none; color: inherit; display: block; transition: box-shadow .2s ease, transform .2s ease; }
+    .project-card:hover { box-shadow: 0 20px 40px rgba(59,130,246,.12); transform: translateY(-2px); }
+    .project-card h2 { margin: 0 0 8px; font-size: 1.5rem; }
+    .project-card p { margin: 0 0 14px; color: #475569; line-height: 1.75; }
+    .project-card .meta { display: flex; gap: 12px; flex-wrap: wrap; font-size: .94rem; color: #64748b; }
+    .project-card .meta span { background: #eff6ff; color: #1d4ed8; border-radius: 999px; padding: 6px 12px; }
+    .nav { margin-top: 30px; display: flex; gap: 16px; flex-wrap: wrap; }
+    .nav a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <a href="index.html" class="logo">
-                    <span class="logo-icon">💼</span>
-                    <span class="logo-text">Portfolio</span>
-                </a>
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Главная</a></li>
-                    <li><a href="projects.html" class="nav-link active">Проекты</a></li>
-                    <li><a href="services.html" class="nav-link">Услуги</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Контакты</a></li>
-                </ul>
-                <button class="theme-toggle" id="themeToggle" aria-label="Тема">
-                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"/>
-                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                    </svg>
-                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                    </svg>
-                </button>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">Мои проекты</h1>
-            <p class="page-subtitle">Telegram-боты, веб-приложения и AI-ассистенты</p>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects-section">
-        <div class="container">
-            <div class="projects-grid" id="projectsGrid">
-
-                <!-- Project 1: Recipe Bot LLM -->
-                <article class="project-card">
-                    <div class="project-image">🍳</div>
-                    <div class="project-content">
-                        <span class="project-badge">Telegram Bot + AI</span>
-                        <h3 class="project-title">🍴 Ням-Ням — Бот рецептов</h3>
-                        <p class="project-desc">
-                            Telegram-бот для поиска и генерации рецептов с AI.
-                            Выбор способа приготовления (мультиварка, духовка, гриль...), избранное, видео-ссылки.
-                            Работает на Dispek API.
-                        </p>
-                        <div class="project-stack">
-                            <span class="stack-tag">Python</span>
-                            <span class="stack-tag">Aiogram</span>
-                            <span class="stack-tag">Dispek API</span>
-                            <span class="stack-tag">LLM</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://t.me/ValerV9" class="project-link" target="_blank">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.94z"/>
-                                </svg>
-                                Тестировать
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2: Mortgage Calculator -->
-                <article class="project-card">
-                    <div class="project-image">🏠</div>
-                    <div class="project-content">
-                        <span class="project-badge">Веб-приложение</span>
-                        <h3 class="project-title">Ипотечный калькулятор</h3>
-                        <p class="project-desc">
-                            Веб-приложение для расчёта ипотечных платежей.
-                            Удобный интерфейс для быстрого расчёта ежемесячных платежей.
-                        </p>
-                        <div class="project-stack">
-                            <span class="stack-tag">HTML/CSS</span>
-                            <span class="stack-tag">JavaScript</span>
-                            <span class="stack-tag">Python</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/vv-77" class="project-link" target="_blank">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                GitHub
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 3: AI Assistants -->
-                <article class="project-card">
-                    <div class="project-image">🧠</div>
-                    <div class="project-content">
-                        <span class="project-badge">AI Assistant</span>
-                        <h3 class="project-title">AI-ассистенты</h3>
-                        <p class="project-desc">
-                            Создаю AI-ассистентов с помощью конструкторов (Savvi, Qwen).
-                            Изучаю интеграции с различными LLM для разных задач.
-                        </p>
-                        <div class="project-stack">
-                            <span class="stack-tag">Python</span>
-                            <span class="stack-tag">Claude</span>
-                            <span class="stack-tag">Qwen</span>
-                            <span class="stack-tag">MiniMax</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/vv-77" class="project-link" target="_blank">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                GitHub
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 4: SAAS -->
-                <article class="project-card">
-                    <div class="project-image">☁️</div>
-                    <div class="project-content">
-                        <span class="project-badge">SAAS</span>
-                        <h3 class="project-title">SAAS-проект</h3>
-                        <p class="project-desc">
-                            Разрабатываю SaaS-решения для автоматизации бизнес-процессов.
-                            Вайб-кодинг с использованием AI-инструментов.
-                        </p>
-                        <div class="project-stack">
-                            <span class="stack-tag">Python</span>
-                            <span class="stack-tag">Cursor</span>
-                            <span class="stack-tag">Cloud</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://t.me/ValerV9" class="project-link" target="_blank">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.94z"/>
-                                </svg>
-                                Узнать больше
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-text">© 2026 Portfolio Валерия. Сделано с 💜 и AI</p>
-                <p class="footer-subtext">Vibe Coding enabled</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="scripts.js"></script>
+  <main class="page">
+    <div class="breadcrumbs"><a href="index.html">Главная</a> → Каталог проектов</div>
+    <h1>Каталог проектов</h1>
+    <p class="intro">Каждый проект открывается по отдельной странице. Кликните на карточку, чтобы перейти к описанию, демо-кейсу и ссылке на исходники.</p>
+    <ul class="project-list">
+      <li><a class="project-card" href="recipe_bot_llm/">
+        <h2>Ням-Ням — Бот рецептов (LLM)</h2>
+        <p>Telegram-бот с Deepseek API, генерацией рецептов и мультимодальным поиском. Описание, ссылки на код и демо.</p>
+        <div class="meta"><span>Python</span><span>Telegram Bot</span><span>Deepseek</span><span>LLM</span></div>
+      </a></li>
+      <li><a class="project-card" href="recipe_bot/">
+        <h2>Ням-Ням — Telegram-бот</h2>
+        <p>Python-бот на aiogram с логикой обработки рецептов и состоянием пользователя.</p>
+        <div class="meta"><span>Python</span><span>aiogram</span><span>Telegram Bot</span><span>backend</span></div>
+      </a></li>
+      <li><a class="project-card" href="saas/">
+        <h2>Mini-SaaS Scout PRO</h2>
+        <p>Статический SaaS-прототип с адаптивным интерфейсом и презентацией продукта.</p>
+        <div class="meta"><span>HTML</span><span>CSS</span><span>JS</span><span>UX</span></div>
+      </a></li>
+      <li><a class="project-card" href="mortgage-calculator/">
+        <h2>Ипотечный калькулятор</h2>
+        <p>Веб-калькулятор с расчётом графика, экспортом в Excel и подробной демонстрацией.</p>
+        <div class="meta"><span>Python</span><span>HTML</span><span>Excel</span><span>adaptive</span></div>
+      </a></li>
+    </ul>
+    <div class="nav">
+      <a href="index.html">На главную</a>
+      <a href="https://github.com/vv-77/portfolio-assistant">GitHub repo</a>
+    </div>
+  </main>
 </body>
 </html>

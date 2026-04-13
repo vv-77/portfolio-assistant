@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рецепт-бот — Telegram</title>
+  <style>
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #f7f7fc; color: #111827; }
+    .page { max-width: 860px; margin: auto; padding: 32px 24px; }
+    .badge { display: inline-flex; align-items: center; gap: .5rem; padding: 8px 14px; background: #ede9fe; color: #5b21b6; border-radius: 999px; font-weight: 700; }
+    h1 { margin: 16px 0 8px; font-size: clamp(2rem, 4vw, 2.8rem); }
+    p { color: #475569; line-height: 1.8; }
+    ul { padding-left: 20px; color: #475569; }
+    .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 12px; background: #8b5cf6; color: #fff; text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="breadcrumbs"><a href="../index.html">Главная</a> → <a href="../projects.html">Каталог проектов</a> → Ням-Ням</div>
+    <span class="badge">Проект</span>
+    <h1>Ням-Ням — Telegram-бот</h1>
+    <p>Python-бот в Telegram с логикой рецептов, командами и сохранением состояния. Отличается простотой запуска и удобной структурой кода.</p>
+    <section>
+      <h2>Что умеет</h2>
+      <ul>
+        <li>Принимает команды и запросы из Telegram.</li>
+        <li>Обрабатывает данные через aiogram и хранит состояние пользователя.</li>
+        <li>Поддерживает конфигурацию, логирование и работу с базой данных.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Технологии</h2>
+      <ul>
+        <li>Python</li>
+        <li>aiogram</li>
+        <li>Telegram Bot API</li>
+        <li>Асинхронный polling, FSM, logging</li>
+      </ul>
+    </section>
+    <section class="links">
+      <a class="button" href="../Projects/recipe_bot/">Исходники</a>
+      <a class="button" href="../projects.html">Вернуться в каталог</a>
+    </section>
+  </main>
+</body>
+</html>
