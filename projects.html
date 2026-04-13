@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Проекты — Портфолио</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     .page-header { padding: 100px 0 60px; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary)); text-align: center; }
@@ -12,7 +13,7 @@
     .breadcrumbs { margin-bottom: 24px; font-size: 0.95rem; color: var(--text-secondary); }
     .breadcrumbs a { color: var(--primary); text-decoration: none; font-weight: 600; }
     .project-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 24px; max-width: 980px; margin: 0 auto; padding: 48px 24px; }
-    .project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 28px; text-decoration: none; color: inherit; display: block; transition: var(--transition); position: relative; overflow: hidden; cursor: pointer; }
+    .project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 28px; text-decoration: none; color: inherit; display: block; transition: var(--transition); position: relative; overflow: hidden; }
     .project-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--secondary)); opacity: 0; transition: var(--transition); }
     .project-card:hover::before { opacity: 1; }
     .project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: var(--primary); }
@@ -62,17 +63,14 @@
         <p>Веб-калькулятор с расчётом графика, экспортом в Excel и подробной демонстрацией.</p>
         <div class="project-meta"><span class="project-tag">Python</span><span class="project-tag">HTML</span><span class="project-tag">Excel</span><span class="project-tag">Adaptive</span></div>
       </a></li>
-      <li>
-        <div class="project-card" data-toast="Вы на этом сайте 💼">
-          <h2>💼 Сайт-портфолио</h2>
-          <p>Лендинг с каталогом проектов: чистый HTML/CSS/JS, адаптивный дизайн, тёмная тема.</p>
-          <div class="project-meta"><span class="project-tag">HTML5</span><span class="project-tag">CSS3</span><span class="project-tag">Vanilla JS</span><span class="project-tag">GitHub Pages</span></div>
-        </div>
-      </li>
+      <li><a class="project-card portfolio-link" href="index.html">
+        <h2>💼 Сайт-портфолио</h2>
+        <p>Лендинг с каталогом проектов: чистый HTML/CSS/JS, адаптивный дизайн, тёмная тема.</p>
+        <div class="project-meta"><span class="project-tag">HTML5</span><span class="project-tag">CSS3</span><span class="project-tag">Vanilla JS</span><span class="project-tag">GitHub Pages</span></div>
+      </a></li>
     </ul>
     <div class="nav">
       <a href="index.html">← На главную</a>
-      <a href="https://github.com/vv-77/portfolio-assistant" target="_blank">GitHub repo →</a>
     </div>
   </main>
   <footer class="footer-simple">
@@ -83,15 +81,17 @@
   </footer>
   <div class="toast" id="toast"></div>
   <script>
-    document.querySelectorAll('.project-card[data-toast]').forEach(card => {
-      card.addEventListener('click', (e) => {
-        e.preventDefault();
-        const toast = document.getElementById('toast');
-        toast.textContent = card.getAttribute('data-toast');
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 2500);
-      });
-    });
+    (function() {
+      var portfolioCard = document.querySelector(".portfolio-link");
+      if (portfolioCard) {
+        portfolioCard.addEventListener("click", function(e) {
+          var toast = document.getElementById("toast");
+          toast.textContent = "Вы на этом сайте 💼";
+          toast.classList.add("show");
+          setTimeout(function() { toast.classList.remove("show"); }, 2500);
+        });
+      }
+    })();
   </script>
 </body>
 </html>

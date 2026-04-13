@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Портфолио AI Agent Team</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     .hero-simple { padding: 100px 0 60px; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary)); }
@@ -79,13 +80,13 @@
   </footer>
   <div class="toast" id="toast"></div>
   <script>
-    document.querySelectorAll('.card[data-toast]').forEach(card => {
-      card.addEventListener('click', (e) => {
+    document.querySelectorAll(".card[data-toast]").forEach(function(card) {
+      card.addEventListener("click", function(e) {
         e.preventDefault();
-        const toast = document.getElementById('toast');
-        toast.textContent = card.getAttribute('data-toast');
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 2500);
+        var toast = document.getElementById("toast");
+        toast.textContent = card.getAttribute("data-toast");
+        toast.classList.add("show");
+        setTimeout(function() { toast.classList.remove("show"); }, 2500);
       });
     });
   </script>
