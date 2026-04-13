@@ -87,6 +87,8 @@
       var cards = document.querySelectorAll(".project-card[data-toast]");
       cards.forEach(function(card) {
         card.addEventListener("click", function(e) {
+          e.preventDefault();
+          e.stopPropagation();
           var toast = document.getElementById("toast");
           toast.textContent = card.getAttribute("data-toast");
           toast.classList.add("show");
