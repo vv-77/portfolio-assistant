@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Остров Окон — AI-консультант</title>
+  <style>
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #eef9ff; color: #0f172a; }
+    .page { max-width: 920px; margin: auto; padding: 34px 24px; }
+    .breadcrumbs { margin-bottom: 20px; font-size: .95rem; color: #475569; }
+    .breadcrumbs a { color: #2563eb; text-decoration: none; }
+    .badge { display: inline-flex; align-items: center; gap: .5rem; padding: 8px 14px; background: #dbeafe; color: #1e40af; border-radius: 999px; font-weight: 700; }
+    h1 { margin: 10px 0 12px; font-size: clamp(2rem, 4vw, 2.9rem); }
+    p { color: #475569; line-height: 1.8; margin: 0; }
+    section { margin-top: 28px; }
+    section h2 { margin-bottom: 12px; font-size: 1.4rem; }
+    ul { padding-left: 20px; color: #475569; }
+    ul li { margin-bottom: 10px; }
+    .screenshots { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
+    .screenshots img { width: 100%; max-width: 300px; border-radius: 18px; box-shadow: 0 16px 32px rgba(15,23,42,.1); }
+    .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 12px; background: #2563eb; color: #fff; text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="breadcrumbs"><a href="../index.html">Главная</a> → <a href="../projects.html">Каталог проектов</a> → Остров Окон</div>
+    <span class="badge">AI-консультант</span>
+    <h1>Остров Окон — AI-консультант</h1>
+    <p>Голосовой / текстовый консультант для оконного бизнеса, собранный в конструкторе Savvi и настроенный на работу с LLM Qwen. Задача — дать понятный ответ клиенту и предложить выгодное решение.</p>
+    <section>
+      <h2>Что реализовано</h2>
+      <ul>
+        <li>Интерактивная консультация по выбору окон и стеклопакетов.</li>
+        <li>Сценарии диалога для коммерческих предложений.</li>
+        <li>Интеграция с Qwen для генерации текста и обработки запросов.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Технологии</h2>
+      <ul>
+        <li>Savvi — конструктор бота</li>
+        <li>Qwen LLM</li>
+        <li>AI-консультирование и сценарии продаж</li>
+        <li>UX-прототип для бизнеса</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Скриншоты</h2>
+      <div class="screenshots">
+        <img src="screenshots/photo_2026-04-12_16-30-47.jpg" alt="Остров Окон — скриншот 1" />
+        <img src="screenshots/photo_2026-04-12_16-30-50.jpg" alt="Остров Окон — скриншот 2" />
+        <img src="screenshots/photo_2026-04-12_16-30-53.jpg" alt="Остров Окон — скриншот 3" />
+      </div>
+    </section>
+    <section>
+      <h2>Где посмотреть</h2>
+      <p>Детали и исчерпывающие описания хранятся в репозитории <code>ai-agent-team</code>. Ниже — экспорт Savvi, который ты уже положил в папку проекта.</p>
+      <div class="links">
+        <a class="button" href="screenshots/savvi-chat.html">Открыть экспорт Savvi</a>
+        <a class="button" href="../projects.html">Вернуться в каталог</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

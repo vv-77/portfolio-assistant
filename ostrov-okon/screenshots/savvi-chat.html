@@ -1,0 +1,1887 @@
+    <!doctype html>
+  <html>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>69b3d84cc5dce53802564b8f</title>
+      <style>
+        body {
+          font-family: Montserrat, sans-serif;
+          background-color: var(--color-gray11);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-height: 100vh;
+          margin: 0;
+          padding: 20px;
+        }
+        .title-container {
+          text-align: center;
+          width: 100%;
+          max-width: 1000px;
+          margin-bottom: 20px;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        table {
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+        p {
+          margin: auto;
+        }
+        table {
+          margin-left: 10px;
+        }
+        table,
+        th,
+        td {
+          border: 1px solid black;
+          border-collapse: collapse;
+          padding: 7px;
+        }
+        img {
+          width: 400px;
+        }
+        .parent-line-through .line-through-content {
+          text-decoration-line: line-through;
+        }
+        .message-sending {
+          opacity: 0.6;
+        }
+        .title-text {
+          text-align: center;
+          background-color: #007bff;
+          color: var(--color-white);
+          padding: 10px;
+          border-radius: 8px;
+          margin: 20px auto;
+          display: inline-block;
+        }
+        .chat-container {
+          max-width: 1000px;
+          width: 100%;
+          margin: 0 0 40px 0;
+          background-color: var(--color-white);
+          border-radius: 8px;
+          padding: 20px;
+          box-sizing: border-box;
+        }
+        .message-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin: 10px 0;
+        }
+        .message-wrapper.outgoing {
+          align-items: flex-end;
+        }
+        .message-wrapper.system {
+          align-items: center; /* Выравнивание по центру для системных сообщений */
+        }
+        .message-wrapper.function {
+          align-items: flex-start; /* Выравнивание по верхнему краю для функциональных сообщений */
+        }
+        .message-box {
+          border-radius: 15px;
+          display: inline-block;
+        }
+        .message-with-refuse_reason {
+          display: flex;
+          gap: 12px;
+          align-items: center;
+        }
+        .outgoing .message-box {
+          background-color: #e6f7ff;
+          border-top-right-radius: 0px;
+        }
+        .incoming .message-box {
+          background-color: var(--color-white);
+          border-top-left-radius: 0px;
+        }
+        .message {
+          padding: 10px 20px;
+          border: 1px solid #ccc;
+          border-radius: 15px;
+        }
+        .message-file {
+          display: flex;
+          cursor: pointer;
+          align-items: center;
+          gap: 0.5rem;
+          color: black;
+          text-decoration: none;
+        }
+        .message .line-through-content p > a[target="_blank"] {
+          word-break: break-all;
+          overflow-wrap: break-word;
+        }
+        .message-file svg {
+          height: 2rem;
+          min-height: 24px;
+          width: 2rem;
+          min-width: 24px;
+        }
+        .outgoing .message {
+          border-top-right-radius: 0px;
+        }
+        .employee {
+          background-color: #b5e3f9;
+        }
+        .incoming .message {
+          border-top-left-radius: 0px;
+        }
+        .system .message-box,
+        .function .message-box {
+          background: none;
+          border: none;
+        }
+        .system .message,
+        .function .message {
+          display: none;
+        }
+        .user-name {
+          font-size: small;
+          font-weight: bold;
+        }
+        .additional-label {
+          display: flex;
+          align-items: center;
+        }
+        .additional-label button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          color: #007bff;
+          font-size: small;
+          margin-left: 10px;
+        }
+        .additional-label {
+          color: #888;
+          font-size: small;
+          margin: 2px 0;
+        }
+        .image-wrapper {
+          padding: 0 0 10px;
+        }
+        .image-wrapper > .additional-label {
+          padding: 0 10px;
+        }
+        .message-box .additional-label button {
+          color: black;
+        }
+        .information {
+          text-align: center;
+          line-height: 22.5px;
+          color: #7f7f7f;
+          white-space: pre-wrap;
+        }
+        .i-button {
+          color: none;
+          background: none;
+          border: 0;
+        }
+        .reasoning-button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 6px;
+          margin-top: 4px;
+          width: 100%;
+        }
+        .reasoning-button > button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          color: #7f7f7f;
+          font-size: 14px;
+        }
+        .system {
+          text-align: center;
+          color: #000000;
+        }
+        .modal, .modal-custom {
+          display: none;
+          position: fixed;
+          z-index: 1000;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+          position: relative;
+          background-color: #edf4ff;
+          margin: 3% auto;
+          padding: 20px;
+          border: 1px solid #0078ff;
+          width: 80%;
+          max-width: 600px;
+          text-align: left;
+          border-radius: 5px;
+          white-space: pre-wrap;
+          height: 70vh;
+          overflow: scroll;
+        }
+        .modal-custom  .modal-content {
+          white-space: normal;
+        }
+        .close {
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: #aaa;
+          font-size: 40px;
+          font-weight: bold;
+        }
+        .close:hover, .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        .table-error-logs {
+          display: table;
+          width: 100%;
+          max-width: 1000px;
+          margin: 20px 0;
+          border-collapse: collapse;
+        }
+        .table-error-logs thead {
+          display: table-header-group;
+        }
+        .table-error-logs tbody {
+          display: table-row-group;
+        }
+        .table-error-logs tr {
+          display: table-row;
+        }
+        .table-error-logs th,
+        .table-error-logs td {
+          display: table-cell;
+          vertical-align: top;
+          padding: 10px;
+        }
+        .error-log-content {
+          white-space: pre-wrap;
+        }
+        .export-header {
+          color: #7f7f7f;
+          white-space: pre-wrap;
+          width: 100%;
+          max-width: 1000px;
+          margin: 20px 0;
+          display: block;
+          text-align: left;
+          box-sizing: border-box;
+        }
+        .export-header pre {
+          overflow-x: auto;
+          margin: 0;
+        }
+        code {
+          white-space: break-spaces;
+        }
+      </style>
+    </head>
+    <body>,
+      <div class="title-container">
+        <h1 class="title-text">ValerV99 | ID: 710258684</h1>
+      </div>
+      <div class="chat-container">
+      <div class="export-header">
+        <pre><code>  "dialogue": {
+    "_id": "69b3d84cc5dce53802564b8f",
+    "channel_name": "telegram_bot",
+    "channel_variables": {
+      "type": "telegram_bot",
+      "username": "ValerV99",
+      "name": "Валерий",
+      "link": "https://t.me/ValerV99",
+      "custom_fields": null,
+      "chat_id": 710258684,
+      "user_id": 710258684,
+      "group_name": null,
+      "topic_name": null,
+      "chat": null,
+      "start_parameter": null
+    },
+    "fields": {},
+    "memory": {},
+    "source": "ValerV99 | ID: 710258684"
+  },
+  "user": {
+    "_id": "69b3d0fc50b546dc54af0151",
+    "email": "vojtenko-v@mail.ru"
+  },
+  "bot": {
+    "_id": "69b3d3509dd62d4545a7ffb0",
+    "name": "Остров окон",
+    "llm_code": "gpt-4o-new-1120",
+    "test_llm_code": null,
+    "timezone": 3
+  }</code></pre>
+      </div>
+      
+      
+        <span class="parent-line-through message-debug"><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>/start</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="13.03.2026, 09:26:36">13.03.2026, 12:26:36 </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Привет! Я помощник компании Остров Окон. Чем могу быть полезен?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="13.03.2026, 09:26:36">13.03.2026, 12:26:36 </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Хочу купить окно</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="13.03.2026, 09:26:56">13.03.2026, 12:26:56 1073 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Здравствуйте! 👋 Это Алексей, консультант «Остров Окон». Подскажите, планируете остекление квартиры, дома или балкона?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="13.03.2026, 09:26:59">13.03.2026, 12:26:59 35 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>квартира</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="13.03.2026, 09:27:13">13.03.2026, 12:27:13 1118 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Отлично! Для квартиры мы можем предложить ПВХ-окна с фурнитурой SIEGENIA, которые обеспечат тепло и тишину в вашем доме. Расскажите, пожалуйста, немного подробнее:</p>
+<p> </p>
+<ol>
+<li>
+<p>Какой тип конструкции вам нужен (глухое окно, поворотное, поворотно-откидное)?</p>
+</li>
+<li>
+<p>Сроки, когда планируете установить окна?</p>
+</li>
+</ol>
+<p> </p>
+<p>Готов помочь подобрать идеальное решение!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="13.03.2026, 09:27:16">13.03.2026, 12:27:16 100 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Привет</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:19:59">15.03.2026, 13:19:59 1705 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Здравствуйте! 👋 Это Алексей, консультант «Остров Окон». Подскажите, вы планируете остекление квартиры, дома или балкона?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:20:01">15.03.2026, 13:20:01 36 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Сколько стоит окно</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:20:14">15.03.2026, 13:20:14 1752 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Стоимость окна зависит от многих факторов:</p>
+<p> </p>
+<ol>
+<li>
+<p>Тип конструкции (глухое, поворотное, поворотно-откидное).</p>
+</li>
+<li>
+<p>Размеры окна.</p>
+</li>
+<li>
+<p>Дополнительные опции (например, энергосберегающее стекло или усиленная шумоизоляция).</p>
+</li>
+<li>
+<p>Тип профиля (ПВХ, алюминий и т.д.).</p>
+</li>
+</ol>
+<p> </p>
+<p>Чтобы рассчитать точную стоимость, я могу предложить бесплатный замер. Специалист приедет, сделает точные замеры и поможет подобрать оптимальный вариант под ваш бюджет.</p>
+<p> </p>
+<p>Запишем вас на замер? Это быстро и бесплатно!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:20:18">15.03.2026, 13:20:18 136 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Да</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:20:37">15.03.2026, 13:20:37 1896 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Отлично! Чтобы записать вас на бесплатный замер, уточните, пожалуйста:</p>
+<p> </p>
+<ol>
+<li>
+<p>Как к вам обращаться?</p>
+</li>
+<li>
+<p>Ваш контактный телефон?</p>
+</li>
+<li>
+<p>Адрес объекта?</p>
+</li>
+<li>
+<p>Когда вам будет удобно: будни или выходные, утро или вечер?</p>
+</li>
+</ol>
+<p> </p>
+<p>После этого я всё оформлю!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:20:39">15.03.2026, 13:20:39 70 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Валерий 89652240343 Сергиев посад завтра</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:21:15">15.03.2026, 13:21:15 4041 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label line-through-content">
+          ⚙️ Выполняется функция google_calendar_get_free_timeslots(dates=["2026-03-16"], calendar_ids=["partnerka.vv@gmail.com"])
+        </div>
+      </div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label">
+          <span class="line-through-content">✅ Выполнена функция</span>
+          <button onclick="openModal(`Mon 2026-03-16
+partnerka.vv@gmail.com: 09:00.`, false)">
+            ℹ️
+          </button>
+          
+        </div>
+      </div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Спасибо, Валерий! Завтра, 16 марта, у нас есть свободное время в 09:00. Подходит ли вам это время?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:21:18">15.03.2026, 13:21:18 68 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Нет. В районе 14 часов</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:21:36">15.03.2026, 13:21:36 2102 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>К сожалению, завтра в районе 14:00 свободного времени нет. Могу предложить записать вас на другой день или уточнить ближайшее доступное время. Как вам будет удобнее?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:21:39">15.03.2026, 13:21:39 41 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Какая погода в Москве</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:22:07">15.03.2026, 13:22:07 2156 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Я консультант по остеклению и не могу предоставить информацию о погоде. Рекомендую воспользоваться погодным приложением или сайтом для получения актуальных данных. Чем могу помочь по остеклению?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:22:09">15.03.2026, 13:22:09 43 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Какое время ещё свободно на завтра</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:23:06">15.03.2026, 13:23:06 2214 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>На завтра, 16 марта, свободное время есть только в 09:00. Если это время не подходит, могу предложить записать вас на другой день. Уточните, пожалуйста, что будет удобнее!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:23:08">15.03.2026, 13:23:08 46 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>А со скольки до скольки работаете</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:23:25">15.03.2026, 13:23:25 2278 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Мы работаем:</p>
+<ul>
+<li>
+<p>Понедельник — Пятница: с 09:00 до 18:00</p>
+</li>
+<li>
+<p>Суббота: с 09:00 до 16:00</p>
+</li>
+</ul>
+<p> </p>
+<p>Если вам нужно другое время, можем подобрать ближайший доступный день. Сообщите, что вам удобнее!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:23:27">15.03.2026, 13:23:27 67 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Привет</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:25:08">15.03.2026, 13:25:08 2503 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Здравствуйте! 👋 Это Алексей, консультант «Остров Окон». Подскажите, планируете остекление квартиры, дома или балкона?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:25:10">15.03.2026, 13:25:10 35 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Хочу заказать замер</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:25:34">15.03.2026, 13:25:34 2550 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Отлично! Чтобы записать вас на бесплатный замер, уточните, пожалуйста:</p>
+<p> </p>
+<ol>
+<li>
+<p>Как к вам обращаться?</p>
+</li>
+<li>
+<p>Ваш контактный телефон?</p>
+</li>
+<li>
+<p>Адрес объекта?</p>
+</li>
+<li>
+<p>Когда вам будет удобно: будни или выходные, утро или вечер?</p>
+</li>
+</ol>
+<p> </p>
+<p>После этого я всё оформлю!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:25:36">15.03.2026, 13:25:36 70 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Валерий 0000 посад завтра после обеда</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:26:02">15.03.2026, 13:26:02 2639 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Спасибо, Валерий! Завтра, 16 марта, после обеда, к сожалению, свободного времени нет. Единственное доступное время — 09:00.</p>
+<p> </p>
+<p>Хотите записаться на это время или выбрать другой день?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:26:04">15.03.2026, 13:26:04 50 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span class="parent-line-through message-debug"><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>/start</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:26:32">15.03.2026, 13:26:32 </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Привет! Я помощник компании Остров Окон. Чем могу быть полезен?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:26:32">15.03.2026, 13:26:32 </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Замер</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:32:24">15.03.2026, 13:32:24 2720 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Отлично! Чтобы записать вас на бесплатный замер, уточните, пожалуйста:</p>
+<p> </p>
+<ol>
+<li>
+<p>Как к вам обращаться?</p>
+</li>
+<li>
+<p>Ваш контактный телефон?</p>
+</li>
+<li>
+<p>Адрес объекта?</p>
+</li>
+<li>
+<p>Когда вам будет удобно: будни или выходные, утро или вечер?</p>
+</li>
+</ol>
+<p> </p>
+<p>После этого я всё оформлю!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:32:26">15.03.2026, 13:32:26 70 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Вкпк 9999</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:32:42">15.03.2026, 13:32:42 2804 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Спасибо за информацию! Пожалуйста, уточните:</p>
+<p> </p>
+<ol>
+<li>
+<p>Полный адрес объекта (город, улица, дом).</p>
+</li>
+<li>
+<p>Удобное время для замера (будни или выходные, утро или вечер).</p>
+</li>
+</ol>
+<p> </p>
+<p>Это поможет мне записать вас на замер!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:32:44">15.03.2026, 13:32:44 60 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Посад завтра после обеда</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:32:56">15.03.2026, 13:32:56 2877 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>К сожалению, завтра, 16 марта, после обеда свободного времени нет. Единственное доступное время — 09:00.</p>
+<p> </p>
+<p>Хотите записаться на это время или выбрать другой день?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:32:58">15.03.2026, 13:32:58 42 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Послезавтра после обеда</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:33:14">15.03.2026, 13:33:14 5925 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label line-through-content">
+          ⚙️ Выполняется функция google_calendar_get_busy(dates=["2026-03-17"], calendar_ids=["partnerka.vv@gmail.com"])
+        </div>
+      </div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label">
+          <span class="line-through-content">✅ Выполнена функция</span>
+          <button onclick="openModal(`There is no busy time for calendar_id=partnerka.vv@gmail.com.`, false)">
+            ℹ️
+          </button>
+          
+        </div>
+      </div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Послезавтра, 17 марта, после обеда время свободно. Уточните, пожалуйста, какое именно время вам удобно, например, 14:00 или позже?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:33:17">15.03.2026, 13:33:17 71 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Какое время на выбор</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:33:43">15.03.2026, 13:33:43 3042 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Послезавтра, 17 марта, у нас полностью свободный график с 09:00 до 18:00. Вы можете выбрать любое удобное время в этом диапазоне. Например: 14:00, 15:00 или другое. Какое время вам подходит?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:33:45">15.03.2026, 13:33:45 60 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>В три</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:34:04">15.03.2026, 13:34:04 6358 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label line-through-content">
+          ⚙️ Выполняется функция google_calendar_create_event(calendar_id="partnerka.vv@gmail.com", summary="Запись на замер Валерий", description="Имя: Валерий, Телефон: 9999, Адрес: Сергиев Посад", start_datetime="2026-03-17T15:00:00+03:00", end_datetime="2026-03-17T16:00:00+03:00")
+        </div>
+      </div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label">
+          <span class="line-through-content">✅ Выполнена функция</span>
+          <button onclick="openModal(`{
+    &quot;event_id&quot;: &quot;88tqb7k4adv3lge3832v4gch2c&quot;,
+    &quot;meet_link&quot;: &quot;&quot;
+}`, false)">
+            ℹ️
+          </button>
+          
+        </div>
+      </div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Записал вас на бесплатный замер:</p>
+<p> </p>
+<ul>
+<li>
+<p>Дата: 17 марта</p>
+</li>
+<li>
+<p>Время: 15:00</p>
+</li>
+<li>
+<p>Адрес: Сергиев Посад</p>
+</li>
+</ul>
+<p> </p>
+<p>Если возникнут вопросы или потребуется изменить время, дайте знать!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:34:08">15.03.2026, 13:34:08 148 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span class="parent-line-through message-debug"><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>/start</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:34:33">15.03.2026, 13:34:33 </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Привет! Я помощник компании Остров Окон. Чем могу быть полезен?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:34:33">15.03.2026, 13:34:33 </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Замер во вторник</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:34:45">15.03.2026, 13:34:45 3332 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Отлично! Чтобы записать вас на замер во вторник, уточните, пожалуйста:</p>
+<p> </p>
+<ol>
+<li>
+<p>Как к вам обращаться?</p>
+</li>
+<li>
+<p>Ваш контактный телефон?</p>
+</li>
+<li>
+<p>Адрес объекта?</p>
+</li>
+<li>
+<p>Удобное время: утро, день или вечер?</p>
+</li>
+</ol>
+<p> </p>
+<p>После этого я всё оформлю!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:34:48">15.03.2026, 13:34:48 67 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Рпак 808080 посад в 15 часов</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:35:15">15.03.2026, 13:35:15 6916 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label line-through-content">
+          ⚙️ Выполняется функция google_calendar_get_busy(dates=["2026-03-17"], calendar_ids=["partnerka.vv@gmail.com"])
+        </div>
+      </div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label">
+          <span class="line-through-content">✅ Выполнена функция</span>
+          <button onclick="openModal(`These timeslots for calendar_id=partnerka.vv@gmail.com are already occupied.
+start-end
+Tuesday 2026-03-17
+15:00-16:00`, false)">
+            ℹ️
+          </button>
+          
+        </div>
+      </div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>К сожалению, во вторник, 17 марта, в 15:00 время уже занято. Могу предложить другое время в этот день или записать вас на другой день. Что вам будет удобнее?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:35:18">15.03.2026, 13:35:18 78 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Какое время ещё свободно</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:35:32">15.03.2026, 13:35:32 3557 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Во вторник, 17 марта, свободное время есть:</p>
+<p> </p>
+<ul>
+<li>
+<p>С 09:00 до 15:00</p>
+</li>
+<li>
+<p>С 16:00 до 18:00</p>
+</li>
+</ul>
+<p> </p>
+<p>Сообщите, пожалуйста, какое время вам удобно!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:35:34">15.03.2026, 13:35:34 50 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>В четыре тогда</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:35:48">15.03.2026, 13:35:48 7367 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label line-through-content">
+          ⚙️ Выполняется функция google_calendar_create_event(calendar_id="partnerka.vv@gmail.com", summary="Запись на замер Рпак", description="Имя: Рпак, Телефон: 808080, Адрес: Сергиев Посад", start_datetime="2026-03-17T16:00:00+03:00", end_datetime="2026-03-17T17:00:00+03:00")
+        </div>
+      </div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label">
+          <span class="line-through-content">✅ Выполнена функция</span>
+          <button onclick="openModal(`{
+    &quot;event_id&quot;: &quot;iqgn4304hmdils55jbplie72o4&quot;,
+    &quot;meet_link&quot;: &quot;&quot;
+}`, false)">
+            ℹ️
+          </button>
+          
+        </div>
+      </div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Записал вас на бесплатный замер:</p>
+<p> </p>
+<ul>
+<li>
+<p>Дата: 17 марта</p>
+</li>
+<li>
+<p>Время: 16:00</p>
+</li>
+<li>
+<p>Адрес: Сергиев Посад</p>
+</li>
+</ul>
+<p> </p>
+<p>Если потребуется изменить время или возникнут вопросы, дайте знать!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:35:52">15.03.2026, 13:35:52 148 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>В какие дни вы работаете</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:42:13">15.03.2026, 13:42:13 3814 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Мы работаем:</p>
+<ul>
+<li>
+<p>Понедельник — Пятница: с 09:00 до 18:00</p>
+</li>
+<li>
+<p>Суббота: с 09:00 до 16:00</p>
+</li>
+<li>
+<p>Воскресенье: выходной</p>
+</li>
+</ul>
+<p> </p>
+<p>Если хотите записаться на замер, сообщите удобный день и время!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:42:16">15.03.2026, 13:42:16 68 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Какой сегодня день</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:42:39">15.03.2026, 13:42:39 3893 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Сегодня воскресенье, 15 марта 2026 года. Мы сегодня не работаем, но могу записать вас на замер на любой удобный день с понедельника по субботу. Сообщите, пожалуйста, дату и время!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:42:42">15.03.2026, 13:42:42 51 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Какое время есть на завтра</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:43:00">15.03.2026, 13:43:00 7973 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label line-through-content">
+          ⚙️ Выполняется функция google_calendar_get_busy(dates=["2026-03-16"], calendar_ids=["partnerka.vv@gmail.com"])
+        </div>
+      </div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label">
+          <span class="line-through-content">✅ Выполнена функция</span>
+          <button onclick="openModal(`There is no busy time for calendar_id=partnerka.vv@gmail.com.`, false)">
+            ℹ️
+          </button>
+          
+        </div>
+      </div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Завтра, 16 марта, у нас полностью свободный график с 09:00 до 18:00. Вы можете выбрать любое удобное время. Сообщите, пожалуйста, когда вам будет удобно!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 10:43:04">15.03.2026, 13:43:04 79 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span class="parent-line-through message-debug"><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>/start</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 11:58:15">15.03.2026, 14:58:15 </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Привет! Я помощник компании Остров Окон. Чем могу быть полезен?</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 11:58:15">15.03.2026, 14:58:15 </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Замер</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 11:58:30">15.03.2026, 14:58:30 4093 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Отлично! Чтобы записать вас на бесплатный замер, уточните, пожалуйста:</p>
+<p> </p>
+<ol>
+<li>
+<p>Как к вам обращаться?</p>
+</li>
+<li>
+<p>Ваш контактный телефон?</p>
+</li>
+<li>
+<p>Адрес объекта?</p>
+</li>
+<li>
+<p>Удобное время: будни или выходные, утро или вечер?</p>
+</li>
+</ol>
+<p> </p>
+<p>После этого я всё оформлю!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 11:58:33">15.03.2026, 14:58:33 70 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Какие дни свободны</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 11:58:48">15.03.2026, 14:58:48 8477 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label line-through-content">
+          ⚙️ Выполняется функция google_calendar_get_busy(dates=["2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20"], calendar_ids=["partnerka.vv@gmail.com"])
+        </div>
+      </div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label">
+          <span class="line-through-content">✅ Выполнена функция</span>
+          <button onclick="openModal(`These timeslots for calendar_id=partnerka.vv@gmail.com are already occupied.
+start-end
+Tuesday 2026-03-17
+15:00-17:00
+Friday 2026-03-20
+08:00-09:00`, false)">
+            ℹ️
+          </button>
+          
+        </div>
+      </div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Свободные дни и время:</p>
+<p> </p>
+<ul>
+<li>
+<p><strong>Понедельник, 16 марта</strong>: с 09:00 до 18:00</p>
+</li>
+<li>
+<p><strong>Вторник, 17 марта</strong>: с 09:00 до 15:00 и с 17:00 до 18:00</p>
+</li>
+<li>
+<p><strong>Среда, 18 марта</strong>: с 09:00 до 18:00</p>
+</li>
+<li>
+<p><strong>Четверг, 19 марта</strong>: с 09:00 до 18:00</p>
+</li>
+<li>
+<p><strong>Пятница, 20 марта</strong>: с 09:00 до 08:00 и с 09:00 до 18:00</p>
+</li>
+</ul>
+<p> </p>
+<p>Сообщите, пожалуйста, удобный день и время!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 11:58:53">15.03.2026, 14:58:53 215 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper outgoing">
+<div class="additional-label"><div class="user-name">Покупатель</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box outgoing">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Среда в три</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 11:59:08">15.03.2026, 14:59:08 9056 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label line-through-content">
+          ⚙️ Выполняется функция google_calendar_create_event(calendar_id="partnerka.vv@gmail.com", summary="Запись на замер", description="Время: 15:00, Среда", start_datetime="2026-03-18T15:00:00+03:00", end_datetime="2026-03-18T16:00:00+03:00")
+        </div>
+      </div></span><span ><div class="message-wrapper incoming function">
+        <div class="additional-label">
+          <span class="line-through-content">✅ Выполнена функция</span>
+          <button onclick="openModal(`{
+    &quot;event_id&quot;: &quot;0fjg2t598bpkrban5p2bk9brk8&quot;,
+    &quot;meet_link&quot;: &quot;&quot;
+}`, false)">
+            ℹ️
+          </button>
+          
+        </div>
+      </div></span><span ><div class="message-wrapper incoming">
+<div class="additional-label"><div class="user-name">Савви</div></div>
+<div class="message-with-refuse_reason">
+<div class="message-box incoming">
+    <div class="message">
+    <span class="line-through-content">
+      <p>Записал вас на бесплатный замер:</p>
+<p> </p>
+<ul>
+<li>
+<p><strong>Дата</strong>: Среда, 18 марта</p>
+</li>
+<li>
+<p><strong>Время</strong>: 15:00</p>
+</li>
+</ul>
+<p> </p>
+<p>Если потребуется изменить время или возникнут вопросы, дайте знать!</p>
+    </span>
+    <div class="additional-label">
+      <div class="user-name" title="15.03.2026, 11:59:12">15.03.2026, 14:59:12 131 токенов</div>
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div></span>
+        <div class="information">
+  Всего токенов: 112436
+  </div>
+      </div>
+      
+      
+  ,,<script>
+        function openModal(text, isInnerHTML) {
+        console.log(text);
+          var modal = document.createElement("div");
+          modal.classList.add("modal");
+
+          var modalContent = document.createElement("div");
+          modalContent.classList.add("modal-content");
+
+          var closeBtn = document.createElement("span");
+          closeBtn.classList.add("close");
+          closeBtn.innerHTML = "&times; ";
+          closeBtn.onclick = closeModal;
+
+          if (isInnerHTML)
+            modalContent.innerHTML = text;
+          else if (!isInnerHTML)
+            modalContent.textContent = text;
+
+          modalContent.appendChild(closeBtn);
+          modal.appendChild(modalContent);
+
+          document.body.appendChild(modal);
+
+          modal.style.display = "block";
+
+          document.addEventListener("click", outsideClickHandler);
+        }
+
+function openCustomModal(id) {
+  let modal = document.getElementById(id);
+
+  //modal = document.getElementById(id);
+
+  var closeBtn = document.getElementById(`close-${id}`);
+
+  // Обработчик для кнопки закрытия
+  closeBtn.onclick = closeCustomModal;
+
+  // Показываем модальное окно
+  modal.style.display = "block";
+
+  document.body.appendChild(modal);
+
+  // Обработчик для клика вне модального окна
+  //document.addEventListener("click", outsideCustomClickHandler);
+
+  function closeCustomModal() {
+    console.log("closeCustomModal", id);
+
+    // Перемещаем окно обратно в начало родителя
+    document.body.insertBefore(modal, document.body.firstChild);
+
+    // Скрываем модальное окно
+    modal.style.display = "none";
+
+    // Удаляем обработчики событий
+    //closeBtn.removeEventListener("click", closeCustomModal);
+    //document.removeEventListener("click", outsideCustomClickHandler);
+  }
+
+  // function outsideCustomClickHandler(event) {
+  //   // Проверяем, что клик был за пределами модального окна
+  //   if (event.target !== modal && !modal.contains(event.target)) {
+  //     closeCustomModal();
+  //   }
+  // }
+
+  // Предотвращаем закрытие при клике внутри модального окна
+  // modal.addEventListener("click", function(event) {
+  //   event.stopPropagation();
+  // });
+}
+
+
+        function closeModal() {
+          var modal = document.querySelector(".modal");
+          modal.parentNode.removeChild(modal);
+
+          document.removeEventListener("click", outsideClickHandler);
+        }
+
+        function outsideClickHandler(event) {
+          var modal = document.querySelector(".modal");
+          if (event.target === modal) {
+            closeModal();
+          }
+        }
+      </script>
+    </body>
+  </html>
