@@ -3,91 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Портфолио AI Agent Team</title>
+  <title>РџРѕСЂС‚С„РѕР»РёРѕ AI Agent Team</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .hero-simple { padding: 100px 0 60px; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary)); }
-    .hero-content { max-width: 980px; margin: auto; padding: 0 24px; }
-    .eyebrow { margin: 0; text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.85rem; color: var(--primary); font-weight: 700; }
-    .title { margin: 0 0 16px; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.02; font-weight: 800; }
-    .title .highlight { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .lead { margin: 0 0 24px; color: var(--text-secondary); line-height: 1.8; max-width: 760px; font-size: 1.1rem; }
-    .button { margin-top: 24px; display: inline-flex; align-items: center; gap: 10px; background: var(--primary); color: #fff; border: none; border-radius: 999px; padding: 14px 28px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: var(--transition); }
-    .button:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-    .card-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 48px; }
-    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 28px; text-decoration: none; color: inherit; transition: var(--transition); position: relative; overflow: hidden; cursor: pointer; }
-    .card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--secondary)); opacity: 0; transition: var(--transition); }
-    .card:hover::before { opacity: 1; }
-    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
-    .card h2 { margin: 0 0 12px; font-size: 1.35rem; font-weight: 700; }
-    .card p { margin: 0; color: var(--text-secondary); line-height: 1.75; }
-    .card-icon { font-size: 2.5rem; margin-bottom: 16px; }
-    .footer-simple { padding: 40px 0; background: var(--bg-secondary); border-top: 1px solid var(--border); margin-top: 60px; }
-    .footer-content { max-width: 980px; margin: auto; padding: 0 24px; text-align: center; }
-    .footer-text { font-weight: 500; margin-bottom: 8px; }
-    .footer-subtext { font-size: 0.875rem; color: var(--text-muted); }
-    .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--text-primary); color: var(--bg-primary); padding: 16px 32px; border-radius: 12px; font-weight: 600; box-shadow: var(--shadow-lg); opacity: 0; transition: all 0.3s ease; z-index: 9999; }
-    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-    @media (max-width: 768px) { .hero-simple { padding: 80px 0 40px; } .title { font-size: 2rem; } }
-  </style>
 </head>
-<body data-theme="light">
-  <main>
-    <section class="hero-simple">
-      <div class="hero-content">
-        <p class="eyebrow">Портфолио</p>
-        <h1 class="title">Проекты и <span class="highlight">AI-ассистенты</span></h1>
-        <p class="lead">Создаю AI-ассистентов с помощью конструкторов и LLM (Salebot, Savvi, Qwen, Minimax, Kimi...). Изучаю интеграции с различными LLM для разных задач. Здесь каждый проект открывается по своей отдельной странице.</p>
-        <a class="button" href="projects.html">Перейти к каталогу ></a>
-      </div>
-    </section>
-    <div class="page" style="max-width: 980px; margin: auto; padding: 48px 24px;">
-      <div class="card-grid"><a class="card" href="recipe_bot_llm/">
-          <div class="card-icon">??</div>
-          <h2>Ням-Ням — Бот рецептов (LLM)</h2>
-          <p>Telegram-бот с Deepseek API, генерацией рецептов и мультимодальным поиском.</p>
-        </a>
-        <a class="card" href="saas/">
-          <div class="card-icon">??</div>
-          <h2>Mini-SaaS Scout PRO</h2>
-          <p>Ищет лучшие идеи и ниши: быстро сделать, дёшево собрать, легко продать.</p>
-        </a>
-        <a class="card" href="ostrov-okon/">
-          <div class="card-icon">??</div>
-          <h2>Остров Окон — AI-консультант</h2>
-          <p>Savvi-конструктор и Qwen LLM для продающего AI-консультанта по окнам.</p>
-        </a>
-        <a class="card" href="mortgage-calculator/">
-          <div class="card-icon">??</div>
-          <h2>Ипотечный калькулятор</h2>
-          <p>Веб-калькулятор с расчётом графика, экспортом в Excel и детальным описанием.</p>
-        </a>
-        <div class="card" data-toast="Вы на этом сайте ??">
-          <div class="card-icon">??</div>
-          <h2>Сайт-портфолио</h2>
-          <p>Лендинг с каталогом проектов: чистый HTML/CSS/JS, адаптивный дизайн, тёмная тема.</p>
-        </div>
-      </div>
+<body>
+  <!-- Hero section -->
+  <section class="hero-simple">
+    <div class="hero-content">
+      <p class="eyebrow">AI Agent Team</p>
+      <h1 class="title"><span class="highlight">AI-Р°СЃСЃРёСЃС‚РµРЅС‚С‹</span> РЅР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРµ</h1>
+      <p class="lead">РЎРѕР·РґР°СЋ AI-Р°СЃСЃРёСЃС‚РµРЅС‚РѕРІ СЃ РїРѕРјРѕС‰СЊСЋ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРѕРІ Рё LLM (Salebot, Savvi, Qwen, Minimax, Kimi...). РР·СѓС‡Р°СЋ РёРЅС‚РµРіСЂР°С†РёРё СЃ СЂР°Р·Р»РёС‡РЅС‹РјРё LLM РґР»СЏ СЂР°Р·РЅС‹С… Р·Р°РґР°С‡. Р—РґРµСЃСЊ РєР°Р¶РґС‹Р№ РїСЂРѕРµРєС‚ РѕС‚РєСЂС‹РІР°РµС‚СЃСЏ РїРѕ СЃРІРѕРµР№ РѕС‚РґРµР»СЊРЅРѕР№ СЃС‚СЂР°РЅРёС†Рµ.</p>
+      <a class="button" href="projects.html">РџРµСЂРµР№С‚Рё Рє РєР°С‚Р°Р»РѕРіСѓ в†’</a>
     </div>
-  </main>
+  </section>
+
+  <!-- Projects grid -->
+  <div class="page" style="max-width: 980px; margin: auto; padding: 48px 24px;">
+    <div class="card-grid">
+      <a class="card" href="recipe_bot_llm/">
+        <div class="card-icon">рџ¤–</div>
+        <h2>РќСЏРј-РќСЏРј вЂ” Р‘РѕС‚ СЂРµС†РµРїС‚РѕРІ (LLM)</h2>
+        <p>Telegram-Р±РѕС‚ СЃ Deepseek API, РіРµРЅРµСЂР°С†РёРµР№ СЂРµС†РµРїС‚РѕРІ Рё РјСѓР»СЊС‚РёРјРѕРґР°Р»СЊРЅС‹Рј РїРѕРёСЃРєРѕРј.</p>
+      </a>
+      <a class="card" href="saas/">
+        <div class="card-icon">рџ’Ў</div>
+        <h2>Mini-SaaS Scout PRO</h2>
+        <p>РС‰РµС‚ Р»СѓС‡С€РёРµ РёРґРµРё Рё РЅРёС€Рё: Р±С‹СЃС‚СЂРѕ СЃРґРµР»Р°С‚СЊ, РґС‘С€РµРІРѕ СЃРѕР±СЂР°С‚СЊ, Р»РµРіРєРѕ РїСЂРѕРґР°С‚СЊ.</p>
+      </a>
+      <a class="card" href="ostrov-okon/">
+        <div class="card-icon">рџЄџ</div>
+        <h2>РћСЃС‚СЂРѕРІ РћРєРѕРЅ вЂ” AI-РєРѕРЅСЃСѓР»СЊС‚Р°РЅС‚</h2>
+        <p>Savvi-РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Рё Qwen LLM РґР»СЏ РїСЂРѕРґР°СЋС‰РµРіРѕ AI-РєРѕРЅСЃСѓР»СЊС‚Р°РЅС‚Р° РїРѕ РѕРєРЅР°Рј.</p>
+      </a>
+      <a class="card" href="mortgage-calculator/">
+        <div class="card-icon">рџ“Љ</div>
+        <h2>РРїРѕС‚РµС‡РЅС‹Р№ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂ</h2>
+        <p>Web-РїСЂРёР»РѕР¶РµРЅРёРµ СЃ РіСЂР°С„РёРєР°РјРё, Excel-СЌРєСЃРїРѕСЂС‚РѕРј Рё СЂР°СЃС‡С‘С‚РѕРј РїРµСЂРµРїР»Р°С‚.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer class="footer-simple">
     <div class="footer-content">
-      <p class="footer-text">?? Портфолио AI Agent Team</p>
-      <p class="footer-subtext">© 2026. Без фреймворков • Чистый код • Адаптивный дизайн</p>
+      <p class="footer-text">В© 2024 AI Agent Team</p>
+      <p class="footer-subtext">РЎРґРµР»Р°РЅРѕ СЃ Р»СЋР±РѕРІСЊСЋ Рє AI Рё Р°РІС‚РѕРјР°С‚РёР·Р°С†РёРё</p>
     </div>
   </footer>
-  <div class="toast" id="toast"></div>
-  <script>
-    document.querySelectorAll(".card[data-toast]").forEach(function(card) {
-      card.addEventListener("click", function(e) {
-        e.preventDefault();
-        var toast = document.getElementById("toast");
-        toast.textContent = card.getAttribute("data-toast");
-        toast.classList.add("show");
-        setTimeout(function() { toast.classList.remove("show"); }, 2500);
-      });
-    });
-  </script>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
