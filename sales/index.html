@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HR AI Assistant B2B — Проект</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .page-header { padding: 100px 0 60px; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary)); text-align: center; }
+    .page-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 0 0 16px; }
+    .page-subtitle { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.75; }
+    .breadcrumbs { margin-bottom: 24px; font-size: 0.95rem; color: var(--text-secondary); }
+    .breadcrumbs a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .project-detail { max-width: 980px; margin: 0 auto; padding: 48px 24px; }
+    .detail-hero { text-align: center; margin-bottom: 48px; }
+    .detail-icon { font-size: 4rem; margin-bottom: 16px; }
+    .detail-title { font-size: 2.5rem; font-weight: 800; margin: 0 0 16px; }
+    .detail-desc { color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin: 0 auto 32px; }
+    .detail-meta { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px; }
+    .project-tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; border-radius: 999px; font-weight: 600; font-size: 0.8rem; }
+    .detail-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 24px; }
+    .detail-section h3 { margin: 0 0 16px; font-size: 1.4rem; font-weight: 700; }
+    .detail-section p { margin: 0 0 12px; color: var(--text-secondary); line-height: 1.8; }
+    .tariff-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .tariff-table th, .tariff-table td { border: 1px solid var(--border); padding: 12px; text-align: left; }
+    .tariff-table th { background: var(--bg-secondary); font-weight: 600; }
+    .nav { margin: 48px auto; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; padding: 0 24px; }
+    .nav a { color: var(--primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 999px; background: var(--bg-secondary); border: 1px solid var(--border); transition: var(--transition); }
+    .nav a:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .footer-simple { padding: 40px 0; background: var(--bg-secondary); border-top: 1px solid var(--border); }
+    .footer-content { max-width: 980px; margin: auto; padding: 0 24px; text-align: center; }
+    .footer-text { font-weight: 500; margin-bottom: 8px; }
+    .footer-subtext { font-size: 0.875rem; color: var(--text-muted); }
+    @media (max-width: 768px) { .page-header { padding: 80px 0 40px; } .page-title { font-size: 1.8rem; } .detail-title { font-size: 1.8rem; } }
+  </style>
+</head>
+<body data-theme="light">
+  <main>
+    <div class="page-header">
+      <div style="max-width: 980px; margin: auto; padding: 0 24px;">
+        <div class="breadcrumbs"><a href="../index.html">Главная</a> → <a href="../projects.html">Проекты</a> → HR AI Assistant B2B</div>
+        <h1 class="page-title">HR AI Assistant B2B</h1>
+        <p class="page-subtitle">Корпоративный HR-бот с RAG, Telegram/Web API и полной поддержкой ТК РФ</p>
+      </div>
+    </div>
+
+    <div class="project-detail">
+      <div class="detail-hero">
+        <div class="detail-icon">🤖</div>
+        <h2 class="detail-title">HR AI Assistant B2B (Sales Kit)</h2>
+        <p class="detail-desc">Корпоративный HR-ассистент с тремя тарифами (Cloud/Hybrid/Boxed), RAG-поиском по базе знаний, поддержкой Telegram и Web API. Полная документация, скрипты онбординга и лицензирования.</p>
+        <div class="detail-meta">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Telegram Bot</span>
+          <span class="project-tag">RAG</span>
+          <span class="project-tag">LLM</span>
+          <span class="project-tag">B2B</span>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3>📋 Описание</h3>
+        <p>Проект представляет собой готовое решение для автоматизации HR-запросов сотрудников. Бот отвечает на вопросы по ТК РФ, отпускам, больничным, справкам и шаблонам документов.</p>
+        <p><strong>Ключевые особенности:</strong></p>
+        <ul>
+          <li>Три тарифа: Cloud (облачный LLM), Hybrid (локальная БД + облачный LLM), Boxed (полный офлайн с Ollama)</li>
+          <li>RAG-поиск по загруженной базе знаний компании</li>
+          <li>Поддержка Telegram и Web API</li>
+          <li>Анонимизация персональных данных в Hybrid-режиме</li>
+          <li>Система лицензирования для Boxed-тарифа</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>📊 Тарифы</h3>
+        <table class="tariff-table">
+          <tr><th>Тариф</th><th>Режим</th><th>Для кого</th><th>Что входит</th></tr>
+          <tr><td>Cloud</td><td><code>LLM_MODE=cloud</code></td><td>Быстрый старт</td><td>RAG + облачный LLM, web+telegram, обновления, поддержка</td></tr>
+          <tr><td>Hybrid</td><td><code>LLM_MODE=hybrid</code></td><td>Компромисс по ИБ</td><td>Локальный RAG, анонимизация, облачный LLM</td></tr>
+          <tr><td>Boxed</td><td><code>LLM_MODE=local</code></td><td>Полный офлайн</td><td>Ollama + локальная модель, лицензия, регламент обновлений</td></tr>
+        </table>
+      </div>
+
+      <div class="detail-section">
+        <h3>📁 Структура проекта</h3>
+        <p><code>sales/</code> — единый файл документации (SALES-KIT-ALL.md) с полной информацией:</p>
+        <ul>
+          <li><code>TARIFFS.md</code> — описание тарифов</li>
+          <li><code>UPGRADE-GUIDE.md</code> — руководство по миграции</li>
+          <li><code>support/</code> — FAQ, troubleshooting, escalation flow</li>
+          <li><code>billing/</code> — шаблоны счетов, напоминаний, генератор лицензий</li>
+          <li><code>tariffs/</code> — скрипты онбординга для каждого тарифа</li>
+          <li><code>scripts/</code> — утилиты диагностики и миграции</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>🖼️ Скриншот</h3>
+        <p>Работа Telegram-бота в реальных условиях:</p>
+        <img src="photo_2026-04-15_20-12-40.jpg" alt="Скриншот работы бота" style="max-width: 100%; border-radius: 12px; border: 1px solid var(--border);" />
+      </div>
+
+      <div class="nav">
+        <a href="../projects.html">← Назад к каталогу</a>
+        <a href="../index.html">На главную</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-simple">
+    <div class="footer-content">
+      <p class="footer-text">💼 Портфолио AI Agent Team</p>
+      <p class="footer-subtext">© 2026. Без фреймворков • Чистый код • Адаптивный дизайн</p>
+    </div>
+  </footer>
+</body>
+</html>
