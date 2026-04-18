@@ -21,19 +21,20 @@
     .contact-card.highlight h2,
     .contact-card.highlight p,
     .contact-card.highlight .contact-desc,
-    .contact-card.highlight .contact-telegram { color: #0f172a !important; }
+    .contact-card.highlight .contact-telegram { color: inherit; }
     .contact-card.in-progress { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(16, 185, 129, 0.2)); border: 2px solid var(--primary); }
     .contact-card.in-progress h2,
-    .contact-card.in-progress p { color: #0f172a !important; }
+    .contact-card.in-progress p { color: inherit; }
     .contact-highlight { display: flex; align-items: center; gap: 12px; padding-bottom: 24px; flex-wrap: wrap; }
     .contact-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; border-radius: 999px; font-weight: 600; font-size: 0.9rem; }
     .contact-badge.in-progress { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
-    .contact-telegram { font-size: 1.3rem; font-weight: 700; color: var(--primary); }
-    .contact-telegram a { color: var(--primary); text-decoration: none; }
+    .contact-telegram { font-size: 1.3rem; font-weight: 700; color: inherit !important; }
+    .contact-telegram a { color: inherit; text-decoration: none; }
     .contact-telegram a:hover { text-decoration: underline; }
-    .contact-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .contact-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; color: inherit; }
     .contact-title-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; border-radius: 999px; font-weight: 600; font-size: 0.85rem; }
-    .contact-desc { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; margin: 0 0 12px; }
+    .contact-title-badge.in-progress-badge { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
+    .contact-desc { color: inherit !important; font-size: 1.05rem; line-height: 1.8; margin: 0 0 12px; }
     .contact-list { margin: 16px 0; padding-left: 20px; }
     .contact-list li { color: var(--text-secondary); font-size: 1rem; line-height: 1.8; margin-bottom: 8px; }
     .in-progress { background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1)); border: 2px solid var(--primary); }
