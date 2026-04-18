@@ -16,9 +16,9 @@
     .breadcrumbs { margin-bottom: 24px; font-size: 0.95rem; color: var(--text-secondary); }
     .breadcrumbs a { color: var(--primary); text-decoration: none; font-weight: 600; }
     .contact-section { max-width: 980px; margin: 0 auto; padding: 48px 24px; }
-    .contact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 24px; }
-    .contact-card.highlight { background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(16, 185, 129, 0.05)); border: 2px solid var(--primary); }
-    .contact-card.in-progress { background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(16, 185, 129, 0.08)); border: 2px solid var(--primary); }
+    .contact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 24px; color: var(--text-primary); }
+    .contact-card.highlight { background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1)); border: 2px solid var(--primary); color: var(--text-primary); }
+    .contact-card.in-progress { background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(16, 185, 129, 0.15)); border: 2px solid var(--primary); color: var(--text-primary); }
     .contact-highlight { display: flex; align-items: center; gap: 12px; padding-bottom: 24px; flex-wrap: wrap; }
     .contact-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; border-radius: 999px; font-weight: 600; font-size: 0.9rem; }
     .contact-badge.in-progress { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
@@ -32,9 +32,9 @@
     .contact-list li { color: var(--text-secondary); font-size: 1rem; line-height: 1.8; margin-bottom: 8px; }
     .in-progress { background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1)); border: 2px solid var(--primary); }
     .in-progress-badge { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
-    .nav { margin: 48px auto; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; padding: 0 24px; }
-    .nav a { color: var(--primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 999px; background: var(--bg-secondary); border: 1px solid var(--border); transition: var(--transition); }
-    .nav a:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .contact-links-nav { margin: 48px auto; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; padding: 0 24px; }
+    .contact-links-nav a { color: var(--primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 999px; background: var(--bg-secondary); border: 1px solid var(--border); transition: var(--transition); }
+    .contact-links-nav a:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
     .footer-simple { padding: 40px 0; background: var(--bg-secondary); border-top: 1px solid var(--border); }
     .footer-content { max-width: 980px; margin: auto; padding: 0 24px; text-align: center; }
     .footer-text { font-weight: 500; margin-bottom: 8px; }
@@ -102,7 +102,7 @@
         <p class="contact-desc">Веб-приложение для загрузки, анализа, визуализации и AI-разбора Excel/PDF файлов с клиентским экспортом в PDF.</p>
       </div>
 
-      <div class="nav">
+      <div class="contact-links-nav">
         <a href="index.html">На главную</a>
         <a href="projects.html">Каталог проектов</a>
       </div>
