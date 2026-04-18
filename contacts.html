@@ -10,43 +10,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .page-header { padding: 140px 0 60px; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary)); text-align: center; }
-    .page-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 0 0 16px; }
-    .page-subtitle { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.75; }
-    .breadcrumbs { margin-bottom: 24px; font-size: 0.95rem; color: var(--text-secondary); }
-    .breadcrumbs a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .page-header { padding: 140px 0 60px; background: linear-gradient(135deg, #f1f5f9, #e2e8f0); text-align: center; }
+    [data-theme="dark"] .page-header { background: linear-gradient(135deg, #1e293b, #0f172a); }
+    .page-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 0 0 16px; color: #0f172a; }
+    [data-theme="dark"] .page-title { color: #f1f5f9; }
+    .page-subtitle { color: #475569; font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.75; }
+    [data-theme="dark"] .page-subtitle { color: #94a3b8; }
+    .breadcrumbs { margin-bottom: 24px; font-size: 0.95rem; color: #475569; }
+    [data-theme="dark"] .breadcrumbs { color: #94a3b8; }
+    .breadcrumbs a { color: #6366f1; text-decoration: none; font-weight: 600; }
     .contact-section { max-width: 980px; margin: 0 auto; padding: 48px 24px; }
-    .contact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 24px; color: var(--text-primary); }
-    .contact-card.highlight { background: linear-gradient(135deg, rgba(99, 102, 241, 0.6), rgba(16, 185, 129, 0.6)); border: 2px solid var(--primary); color: var(--text-primary); }
-    .contact-card.highlight h2 { color: var(--text-primary) !important; }
-    .contact-card.highlight p { color: var(--text-primary) !important; }
-    .contact-card.highlight .contact-desc { color: var(--text-primary) !important; }
-    .contact-card.highlight .contact-telegram { color: var(--text-primary) !important; }
-    .contact-card.highlight .contact-badge { color: #fff !important; }
-    .contact-card.in-progress { background: linear-gradient(135deg, rgba(99, 102, 241, 0.6), rgba(16, 185, 129, 0.6)); border: 2px solid var(--primary); color: var(--text-primary); }
-    .contact-card.in-progress h2 { color: var(--text-primary) !important; }
-    .contact-card.in-progress p { color: var(--text-primary) !important; }
+    .contact-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px; margin-bottom: 24px; color: #0f172a; }
+    [data-theme="dark"] .contact-card { background: #1e293b; border-color: #334155; color: #f1f5f9; }
+    .contact-card.highlight { background: linear-gradient(135deg, #6366f133, #10b98133); border: 2px solid #6366f1; }
+    .contact-card.highlight h2, .contact-card.highlight p, .contact-card.highlight .contact-desc, .contact-card.highlight .contact-telegram, .contact-card.highlight span { color: #0f172a; }
+    [data-theme="dark"] .contact-card.highlight h2, [data-theme="dark"] .contact-card.highlight p, [data-theme="dark"] .contact-card.highlight .contact-desc, [data-theme="dark"] .contact-card.highlight .contact-telegram, [data-theme="dark"] .contact-card.highlight span { color: #f1f5f9; }
+    .contact-card.in-progress { background: linear-gradient(135deg, #6366f14d, #10b9814d); border: 2px solid #6366f1; }
+    .contact-card.in-progress h2, .contact-card.in-progress p { color: #0f172a; }
+    [data-theme="dark"] .contact-card.in-progress h2, [data-theme="dark"] .contact-card.in-progress p { color: #f1f5f9; }
     .contact-highlight { display: flex; align-items: center; gap: 12px; padding-bottom: 24px; flex-wrap: wrap; }
-    .contact-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; border-radius: 999px; font-weight: 600; font-size: 0.9rem; }
-    .contact-badge.in-progress { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
-    .contact-telegram { font-size: 1.3rem; font-weight: 700; color: inherit !important; }
-    .contact-telegram a { color: inherit; text-decoration: none; }
+    .contact-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: linear-gradient(135deg, #6366f1, #818cf8); color: #fff; border-radius: 999px; font-weight: 600; font-size: 0.9rem; }
+    .contact-badge.in-progress { background: linear-gradient(135deg, #6366f1, #10b981); }
+    .contact-telegram { font-size: 1.3rem; font-weight: 700; color: #6366f1; }
+    .contact-telegram a { color: #6366f1; text-decoration: none; }
     .contact-telegram a:hover { text-decoration: underline; }
-    .contact-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; color: inherit; }
-    .contact-title-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; border-radius: 999px; font-weight: 600; font-size: 0.85rem; }
-    .contact-title-badge.in-progress-badge { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
-    .contact-desc { color: inherit !important; font-size: 1.05rem; line-height: 1.8; margin: 0 0 12px; }
-    .contact-list { margin: 16px 0; padding-left: 20px; }
-    .contact-list li { color: var(--text-secondary); font-size: 1rem; line-height: 1.8; margin-bottom: 8px; }
-    .in-progress { background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1)); border: 2px solid var(--primary); }
-    .in-progress-badge { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
+    [data-theme="dark"] .contact-telegram, [data-theme="dark"] .contact-telegram a { color: #818cf8; }
+    .contact-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; color: #0f172a; }
+    [data-theme="dark"] .contact-title { color: #f1f5f9; }
+    .contact-title-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: linear-gradient(135deg, #6366f1, #818cf8); color: #fff; border-radius: 999px; font-weight: 600; font-size: 0.85rem; }
+    .contact-title-badge.in-progress-badge { background: linear-gradient(135deg, #6366f1, #10b981); }
+    .contact-desc { color: #475569; font-size: 1.05rem; line-height: 1.8; margin: 0 0 12px; }
+    [data-theme="dark"] .contact-desc { color: #cbd5e1; }
     .contact-links-nav { margin: 48px auto; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; padding: 0 24px; }
-    .contact-links-nav a { color: var(--primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 999px; background: var(--bg-secondary); border: 1px solid var(--border); transition: var(--transition); }
-    .contact-links-nav a:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
-    .footer-simple { padding: 40px 0; background: var(--bg-secondary); border-top: 1px solid var(--border); }
+    .contact-links-nav a { color: #6366f1; text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 999px; background: #f1f5f9; border: 1px solid #e2e8f0; transition: var(--transition); }
+    [data-theme="dark"] .contact-links-nav a { background: #1e293b; border-color: #334155; }
+    .contact-links-nav a:hover { background: #6366f1; color: #fff; border-color: #6366f1; }
+    .footer-simple { padding: 40px 0; background: #f1f5f9; border-top: 1px solid #e2e8f0; }
+    [data-theme="dark"] .footer-simple { background: #0f172a; border-color: #334155; }
     .footer-content { max-width: 980px; margin: auto; padding: 0 24px; text-align: center; }
-    .footer-text { font-weight: 500; margin-bottom: 8px; }
-    .footer-subtext { font-size: 0.875rem; color: var(--text-muted); }
+    .footer-text { font-weight: 500; margin-bottom: 8px; color: #0f172a; }
+    [data-theme="dark"] .footer-text { color: #f1f5f9; }
+    .footer-subtext { font-size: 0.875rem; color: #64748b; }
+    [data-theme="dark"] .footer-subtext { color: #94a3b8; }
     @media (max-width: 768px) { .page-header { padding: 80px 0 40px; } .page-title { font-size: 1.8rem; } .contact-card { padding: 24px; } }
   </style>
 </head>
