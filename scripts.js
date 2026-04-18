@@ -133,39 +133,7 @@ projectCards.forEach(card => {
 });
 
 // ===== Mobile Menu Toggle (for future) =====
-const mobileMenuBtn = document.createElement('button');
-mobileMenuBtn.className = 'mobile-menu-btn';
-mobileMenuBtn.innerHTML = '☰';
-mobileMenuBtn.style.cssText = `
-    display: none;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--text-primary);
-`;
-
-@media (max-width: 768px) {
-    mobileMenuBtn.style.display = 'block';
-    const nav = document.querySelector('.nav');
-    nav.insertBefore(mobileMenuBtn, nav.firstChild);
-
-    mobileMenuBtn.addEventListener('click', () => {
-        const navList = document.querySelector('.nav-list');
-        navList.style.cssText = `
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 72px;
-            left: 0;
-            right: 0;
-            background: var(--bg-primary);
-            padding: 24px;
-            gap: 16px;
-            border-bottom: 1px solid var(--border);
-        `;
-    });
-}
+// Mobile menu functionality will be added separately
 
 // ===== Lazy Load Images =====
 if ('IntersectionObserver' in window) {
