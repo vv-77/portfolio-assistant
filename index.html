@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
@@ -119,17 +119,13 @@
   <div class="toast" id="toast"></div>
   <script src="scripts.js"></script>
   <script>
-    // Theme toggle
     (function() {
       const themeToggle = document.getElementById('themeToggle');
       const body = document.body;
-      
-      // Check saved theme
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) {
         body.setAttribute('data-theme', savedTheme);
       }
-      
       themeToggle.addEventListener('click', () => {
         const currentTheme = body.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -137,8 +133,6 @@
         localStorage.setItem('theme', newTheme);
       });
     })();
-
-    // Toast
     document.querySelectorAll(".card[data-toast]").forEach(function(card) {
       card.addEventListener("click", function(e) {
         e.preventDefault();
