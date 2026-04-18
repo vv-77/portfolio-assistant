@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MultiModel Bot — Проект</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .page-header { padding: 100px 0 60px; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary)); text-align: center; }
+    .page-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 0 0 16px; }
+    .page-subtitle { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.75; }
+    .breadcrumbs { margin-bottom: 24px; font-size: 0.95rem; color: var(--text-secondary); }
+    .breadcrumbs a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .project-detail { max-width: 980px; margin: 0 auto; padding: 48px 24px; }
+    .detail-hero { text-align: center; margin-bottom: 48px; }
+    .detail-icon { font-size: 4rem; margin-bottom: 16px; }
+    .detail-title { font-size: 2.5rem; font-weight: 800; margin: 0 0 16px; }
+    .detail-desc { color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin: 0 auto 32px; }
+    .detail-meta { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px; }
+    .project-tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; border-radius: 999px; font-weight: 600; font-size: 0.8rem; }
+    .detail-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 24px; }
+    .detail-section h3 { margin: 0 0 16px; font-size: 1.4rem; font-weight: 700; }
+    .detail-section p { margin: 0 0 12px; color: var(--text-secondary); line-height: 1.8; }
+    .llm-comparison { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
+    .llm-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px; padding: 24px; text-align: center; }
+    .llm-icon { font-size: 3rem; margin-bottom: 12px; }
+    .llm-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .llm-desc { font-size: 0.9rem; color: var(--text-secondary); }
+    .demo-note { background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1)); border: 1px solid var(--primary); border-radius: 16px; padding: 24px; margin: 20px 0; }
+    .demo-note p { margin: 0; color: var(--text-primary); }
+    .screenshots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
+    .screenshot-item { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .screenshot-item img { width: 100%; height: auto; display: block; transition: var(--transition); }
+    .screenshot-item:hover img { transform: scale(1.02); }
+    .nav { margin: 48px auto; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; padding: 0 24px; }
+    .nav a { color: var(--primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 999px; background: var(--bg-secondary); border: 1px solid var(--border); transition: var(--transition); }
+    .nav a:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .footer-simple { padding: 40px 0; background: var(--bg-secondary); border-top: 1px solid var(--border); }
+    .footer-content { max-width: 980px; margin: auto; padding: 0 24px; text-align: center; }
+    .footer-text { font-weight: 500; margin-bottom: 8px; }
+    .footer-subtext { font-size: 0.875rem; color: var(--text-muted); }
+    @media (max-width: 768px) { .page-header { padding: 80px 0 40px; } .page-title { font-size: 1.8rem; } .detail-title { font-size: 1.8rem; } }
+  </style>
+</head>
+<body data-theme="light">
+  <main>
+    <div class="page-header">
+      <div style="max-width: 980px; margin: auto; padding: 0 24px;">
+        <div class="breadcrumbs"><a href="../index.html">Главная</a> → <a href="../projects.html">Проекты</a> → MultiModel Bot</div>
+        <h1 class="page-title">MultiModel Bot</h1>
+        <p class="page-subtitle">Сравнение ответов от GigaChat и YandexGPT на одни и те же вопросы</p>
+      </div>
+    </div>
+
+    <div class="project-detail">
+      <div class="detail-hero">
+        <div class="detail-icon">🤖⚡🤖</div>
+        <h2 class="detail-title">MultiModel Bot (GigaChat vs YandexGPT)</h2>
+        <p class="detail-desc">Интерактивный бот для сравнения ответов от разных больших языковых моделей. Выбираешь LLM — задаёшь вопрос — получаешь ответ. Можно задать один и тот же вопрос по очереди Яндексу и Гигачату и сравнить результаты.</p>
+        <div class="detail-meta">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Telegram Bot</span>
+          <span class="project-tag">GigaChat</span>
+          <span class="project-tag">YandexGPT</span>
+          <span class="project-tag">LLM</span>
+          <span class="project-tag">Comparison</span>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3>📋 Описание</h3>
+        <p>MultiModel Bot — это интерактивное демо-приложение, позволяющее сравнивать ответы от двух популярных российских больших языковых моделей: <strong>GigaChat</strong> и <strong>YandexGPT</strong>.</p>
+        <p><strong>Ключевые возможности:</strong></p>
+        <ul>
+          <li>Выбор LLM перед отправкой вопроса (GigaChat или YandexGPT)</li>
+          <li>Отправка текстовых запросов и получение ответов от выбранной модели</li>
+          <li>Возможность задать один и тот же вопрос обеим моделям по очереди</li>
+          <li>Сравнение качества, стиля и содержания ответов</li>
+          <li>Простой и интуитивно понятный интерфейс</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>🤝 Поддерживаемые LLM</h3>
+        <div class="llm-comparison">
+          <div class="llm-card">
+            <div class="llm-icon">🟢</div>
+            <div class="llm-name">GigaChat</div>
+            <div class="llm-desc">LLM от Сбера. Поддерживает русский язык, работает через API.</div>
+          </div>
+          <div class="llm-card">
+            <div class="llm-icon">🔵</div>
+            <div class="llm-name">YandexGPT</div>
+            <div class="llm-desc">LLM от Яндекса. Генерация текста, диалоговый режим, API.</div>
+          </div>
+        </div>
+        <p style="margin-top: 20px;"><em>По желанию можно добавить другие LLM (например, Qwen, Deepseek, Kimi, MiniMax).</em></p>
+      </div>
+
+      <div class="detail-section">
+        <h3>💡 Сценарии использования</h3>
+        <ul>
+          <li><strong>Сравнение моделей:</strong> Оценить, какая LLM лучше справляется с вашими задачами</li>
+          <li><strong>Тестирование:</strong> Проверить качество ответов разных моделей на одинаковые запросы</li>
+          <li><strong>Образование:</strong> Показать студентам различия в подходах разных LLM</li>
+          <li><strong>Демо:</strong> Наглядно продемонстрировать возможности различных языковых моделей</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>🖼️ Скриншоты</h3>
+        <div class="screenshots-grid">
+          <div class="screenshot-item">
+            <img src="screenshots/1.jpg" alt="MultiModel Bot — скриншот 1" />
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/2.jpg" alt="MultiModel Bot — скриншот 2" />
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/3.jpg" alt="MultiModel Bot — скриншот 3" />
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/4.jpg" alt="MultiModel Bot — скриншот 4" />
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/5.jpg" alt="MultiModel Bot — скриншот 5" />
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/6.jpg" alt="MultiModel Bot — скриншот 6" />
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3>🛠️ Технологии</h3>
+        <ul>
+          <li><strong>Язык:</strong> Python</li>
+          <li><strong>Интерфейс:</strong> Telegram Bot API</li>
+          <li><strong>LLM:</strong> GigaChat API, YandexGPT API</li>
+          <li><strong>Развёртывание:</strong> Гибкое (локально или на сервере)</li>
+        </ul>
+      </div>
+
+      <div class="nav">
+        <a href="../projects.html">← Назад к каталогу</a>
+        <a href="../index.html">На главную</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-simple">
+    <div class="footer-content">
+      <p class="footer-text">💼 Портфолио AI Agent Team</p>
+      <p class="footer-subtext">© 2026. Без фреймворков • Чистый код • Адаптивный дизайн</p>
+    </div>
+  </footer>
+</body>
+</html>
