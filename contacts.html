@@ -17,8 +17,13 @@
     .breadcrumbs a { color: var(--primary); text-decoration: none; font-weight: 600; }
     .contact-section { max-width: 980px; margin: 0 auto; padding: 48px 24px; }
     .contact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 24px; }
-    .contact-card.highlight { background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(16, 185, 129, 0.08)); border: 2px solid var(--primary); }
-    .contact-card.in-progress { background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1)); border: 2px solid var(--primary); }
+    .contact-card.highlight { background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(16, 185, 129, 0.05)); border: 2px solid var(--primary); }
+    .contact-card.highlight h2,
+    .contact-card.highlight p,
+    .contact-card.highlight .contact-telegram { color: var(--text-primary); }
+    .contact-card.in-progress { background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(16, 185, 129, 0.08)); border: 2px solid var(--primary); }
+    .contact-card.in-progress h2,
+    .contact-card.in-progress p { color: var(--text-primary); }
     .contact-highlight { display: flex; align-items: center; gap: 12px; margin-bottom: 0; padding-bottom: 24px; flex-wrap: wrap; }
     .contact-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; border-radius: 999px; font-weight: 600; font-size: 0.9rem; }
     .contact-badge.in-progress { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
@@ -43,33 +48,33 @@
   </style>
 </head>
 <body data-theme="light">
-  <main>
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <nav class="nav">
-          <a href="index.html" class="logo">
-            <span class="logo-icon">💼</span>
-            <span class="logo-text">Portfolio</span>
-          </a>
-          <ul class="nav-list">
-            <li><a href="index.html" class="nav-link">Главная</a></li>
-            <li><a href="projects.html" class="nav-link">Проекты</a></li>
-            <li><a href="contacts.html" class="nav-link active">Контакты</a></li>
-          </ul>
-          <button class="theme-toggle" id="themeToggle" aria-label="Тема">
-            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="5"/>
-              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-            </svg>
-            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-            </svg>
-          </button>
-        </nav>
-      </div>
-    </header>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">💼</span>
+          <span class="logo-text">Portfolio</span>
+        </a>
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Главная</a></li>
+          <li><a href="projects.html" class="nav-link">Проекты</a></li>
+          <li><a href="contacts.html" class="nav-link active">Контакты</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Тема">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
 
+  <main>
     <div class="page-header">
       <div style="max-width: 980px; margin: auto; padding: 0 24px;">
         <div class="breadcrumbs"><a href="index.html">Главная</a> → Контакты</div>
