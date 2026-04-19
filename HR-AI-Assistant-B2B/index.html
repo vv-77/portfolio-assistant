@@ -43,16 +43,16 @@
     <div class="page-header">
       <div style="max-width: 980px; margin: auto; padding: 0 24px;">
         <div class="breadcrumbs"><a href="../index.html">Главная</a> → <a href="../projects.html">Проекты</a> → HR AI Assistant B2B</div>
-        <h1 class="page-title">HR AI Assistant B2B</h1>
-        <p class="page-subtitle">Корпоративный HR-бот с RAG, Telegram/Web API и полной поддержкой ТК РФ</p>
+        <h1 class="page-title">HR AI Assistant B2B — Корпоративный RAG-консультант</h1>
+        <p class="page-subtitle">Готовое B2B-решение для автоматизации внутренних запросов сотрудников</p>
       </div>
     </div>
 
     <div class="project-detail">
       <div class="detail-hero">
         <div class="detail-icon">🤖</div>
-        <h2 class="detail-title">HR AI Assistant B2B (Sales Kit)</h2>
-        <p class="detail-desc">Корпоративный HR-ассистент с тремя тарифами (Cloud/Hybrid/Boxed), RAG-поиском по базе знаний, поддержкой Telegram и Web API. Полная документация, скрипты онбординга и лицензирования.</p>
+        <h2 class="detail-title">HR AI Assistant B2B — Корпоративный RAG-консультант</h2>
+        <p class="detail-desc">Готовое B2B-решение для автоматизации внутренних запросов сотрудников. Отвечает по ТК РФ, отпускам, больничным, справкам и шаблонам документов, опираясь строго на вашу базу знаний.</p>
         <div class="detail-meta">
           <span class="project-tag">Python</span>
           <span class="project-tag">Telegram Bot</span>
@@ -64,37 +64,46 @@
 
       <div class="detail-section">
         <h3>📋 Описание</h3>
-        <p>Проект представляет собой готовое решение для автоматизации HR-запросов сотрудников. Бот отвечает на вопросы по ТК РФ, отпускам, больничным, справкам и шаблонам документов.</p>
-        <p><strong>Ключевые особенности:</strong></p>
-        <ul>
-          <li>Три тарифа: Cloud (облачный LLM), Hybrid (локальная БД + облачный LLM), Boxed (полный офлайн с Ollama)</li>
-          <li>RAG-поиск по загруженной базе знаний компании</li>
-          <li>Поддержка Telegram и Web API</li>
-          <li>Анонимизация персональных данных в Hybrid-режиме</li>
-          <li>Система лицензирования для Boxed-тарифа</li>
-        </ul>
+        <p>Это не просто «HR-бот». Это каркас корпоративного AI-ассистента с тремя режимами развёртывания (Cloud / Hybrid / Boxed). Загружаете свои регламенты, пишете промпт — и система начинает консультировать сотрудников или клиентов без «галлюцинаций», с цитированием источников и соблюдением 152-ФЗ.</p>
+        <p><strong>Стек:</strong> Python 3.11+ + aiogram 3.x + FastAPI + ChromaDB/FAISS (RAG) + LLM API (Qwen/Deepseek) / Ollama (локальная) + SQLite/PostgreSQL + Docker + система лицензирования</p>
       </div>
 
       <div class="detail-section">
-        <h3>📊 Тарифы</h3>
+        <h3>🔄 Под что можно адаптировать</h3>
         <table class="tariff-table">
-          <tr><th>Тариф</th><th>Режим</th><th>Для кого</th><th>Что входит</th></tr>
-          <tr><td>Cloud</td><td><code>LLM_MODE=cloud</code></td><td>Быстрый старт</td><td>RAG + облачный LLM, web+telegram, обновления, поддержка</td></tr>
-          <tr><td>Hybrid</td><td><code>LLM_MODE=hybrid</code></td><td>Компромисс по ИБ</td><td>Локальный RAG, анонимизация, облачный LLM</td></tr>
-          <tr><td>Boxed</td><td><code>LLM_MODE=local</code></td><td>Полный офлайн</td><td>Ollama + локальная модель, лицензия, регламент обновлений</td></tr>
+          <tr><th>Ниша</th><th>Что загружаем</th><th>Что делает бот</th></tr>
+          <tr><td>Юриспруденция / Комплаенс</td><td>ТК РФ, НК РФ, ПБУ, внутренние приказы, судебная практика</td><td>Ответы со статьями, датами, цитатами. Проверка рисков</td></tr>
+          <tr><td>Бухгалтерия / Финансы</td><td>Регламенты, шаблоны отчётности, инструкции 1С</td><td>Расчёт выплат, сроки сдачи, пошаговые инструкции</td></tr>
+          <tr><td>Техподдержка / IT</td><td>База знаний, мануалы, FAQ, логи ошибок</td><td>Диагностика, подбор решений, эскалация на 2-ю линию</td></tr>
+          <tr><td>Продажи / Онбординг</td><td>Каталог, скрипты, гайды, CRM-правила</td><td>Обучение новичков, подсказки менеджерам, генерация КП</td></tr>
+          <tr><td>Ваша сфера</td><td>Ваши документы и регламенты</td><td>Ваш внутренний консультант, который знает всё о вашей компании</td></tr>
         </table>
       </div>
 
       <div class="detail-section">
-        <h3>📁 Структура проекта</h3>
-        <p>        <code>HR-AI-Assistant-B2B/</code> — единый файл документации (SALES-KIT-ALL.md) с полной информацией:</p>
+        <h3>⚙️ Что ещё можно добавить</h3>
         <ul>
-          <li><code>TARIFFS.md</code> — описание тарифов</li>
-          <li><code>UPGRADE-GUIDE.md</code> — руководство по миграции</li>
-          <li><code>support/</code> — FAQ, troubleshooting, escalation flow</li>
-          <li><code>billing/</code> — шаблоны счетов, напоминаний, генератор лицензий</li>
-          <li><code>tariffs/</code> — скрипты онбординга для каждого тарифа</li>
-          <li><code>scripts/</code> — утилиты диагностики и миграции</li>
+          <li>Интеграция с Bitrix24 / amoCRM / 1С для авто-передачи заявок и тикетов</li>
+          <li>Веб-виджет для интранета/корпоративного портала (работа без Telegram)</li>
+          <li>Аудит-логи: кто, когда и что спрашивал (для HR-аналитики и безопасности)</li>
+          <li>Голосовой ввод/вывод, мультиязычность, кэширование частых ответов</li>
+          <li>Автоматическое обновление базы знаний из Google Docs / Notion / SharePoint</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>📅 Сроки и бюджет</h3>
+        <p><strong>Сроки:</strong> 5–7 рабочих дней</p>
+        <p><strong>Бюджет:</strong> от 25 000 ₽ (базовая настройка под вашу базу + тестирование)</p>
+        <p><strong>Не входит:</strong> Аренда сервера, оплата LLM-токенов, наполнение базы с нуля (только структура и парсинг), кастомный дизайн веб-интерфейса, рекламное продвижение</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>💳 Оплата</h3>
+        <ul>
+          <li><strong>Разово:</strong> 30–50% предоплата → демо на моём сервере → сдача → остаток</li>
+          <li><strong>Подписка:</strong> 15% от стоимости/мес (мин. 5 000 ₽) — бот работает сразу, выкупаете когда готовы</li>
+          <li><strong>Исходный код + инструкция</strong> по развёртыванию и администрированию — ваши после полной оплаты</li>
         </ul>
       </div>
 
