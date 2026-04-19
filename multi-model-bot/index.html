@@ -51,64 +51,96 @@
     <div class="page-header">
       <div style="max-width: 980px; margin: auto; padding: 0 24px;">
         <div class="breadcrumbs"><a href="../index.html">Главная</a> → <a href="../projects.html">Проекты</a> → MultiModel Bot</div>
-        <h1 class="page-title">MultiModel Bot</h1>
-        <p class="page-subtitle">Сравнение ответов от GigaChat и YandexGPT на одни и те же вопросы</p>
+        <h1 class="page-title">MultiModel Bot — Фреймворк сравнения и маршрутизации LLM</h1>
+        <p class="page-subtitle">Интерактивный Telegram-бот для параллельного тестирования и сравнения ответов от разных языковых моделей</p>
       </div>
     </div>
 
     <div class="project-detail">
       <div class="detail-hero">
         <div class="detail-icon">🤖⚡🤖</div>
-        <h2 class="detail-title">MultiModel Bot (GigaChat vs YandexGPT)</h2>
-        <p class="detail-desc">Интерактивный бот для сравнения ответов от разных больших языковых моделей. Выбираешь LLM — задаёшь вопрос — получаешь ответ. Можно задать один и тот же вопрос по очереди Яндексу и Гигачату и сравнить результаты.</p>
+        <h2 class="detail-title">MultiModel Bot — Фреймворк сравнения и маршрутизации LLM</h2>
+        <p class="detail-desc">Интерактивный Telegram-бот для параллельного тестирования и сравнения ответов от разных языковых моделей. Изначально настроен на GigaChat и YandexGPT, но архитектура легко масштабируется под любые LLM. Позволяет задавать одинаковые вопросы разным моделям, оценивать качество, стиль, скорость генерации и стоимость токенов, а в будущем — автоматически направлять запросы к оптимальной модели.</p>
         <div class="detail-meta">
           <span class="project-tag">Python</span>
           <span class="project-tag">Telegram Bot</span>
           <span class="project-tag">GigaChat</span>
           <span class="project-tag">YandexGPT</span>
           <span class="project-tag">LLM</span>
-          <span class="project-tag">Comparison</span>
+          <span class="project-tag">A/B Testing</span>
         </div>
       </div>
 
       <div class="detail-section">
-        <h3>📋 Описание</h3>
-        <p>MultiModel Bot — это интерактивное демо-приложение, позволяющее сравнивать ответы от двух популярных российских больших языковых моделей: <strong>GigaChat</strong> и <strong>YandexGPT</strong>.</p>
-        <p><strong>Ключевые возможности:</strong></p>
+        <h3>📋 Стек</h3>
+        <p>Python 3.11+ + aiogram 3.x + GigaChat API + YandexGPT API + LLM Router + Telegram Bot API + асинхронная обработка + логирование</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔹 Хотите такой же, но под вашу задачу?</h3>
+        <p>Это не просто «демо-сравнивалка». Это готовый каркас для тестирования, A/B-анализа и интеллектуальной маршрутизации запросов. Позволяет бизнесу выбрать оптимальную модель по соотношению «цена/качество/скорость» и встроить её в рабочие процессы без переписывания бота с нуля.</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔄 Подо что можно изменить/адаптировать</h3>
+        <table class="tariff-table">
+          <tr><th>Задача</th><th>Как работает</th><th>Для кого</th></tr>
+          <tr><td><strong>A/B тест промптов</strong></td><td>Один запрос → разные системные инструкции → сравнение результатов</td><td>Маркетологи, продуктологи, AI-инженеры</td></tr>
+          <tr><td><strong>Маршрутизатор запросов</strong></td><td>Простые вопросы → дешёвая модель, сложные → мощная</td><td>Корпоративные чат-боты, техподдержка</td></tr>
+          <tr><td><strong>QA-проверка ответов</strong></td><td>Сравнение выводов нейросети с эталонной базой знаний</td><td>Юристы, комплаенс, образовательные платформы</td></tr>
+          <tr><td><strong>Обучение / Демонстрация</strong></td><td>Наглядное сравнение «до/после» или «модель А vs модель Б»</td><td>Тренеры, HR, стартапы, консалтинг</td></tr>
+        </table>
+      </div>
+
+      <div class="detail-section">
+        <h3>⚙️ Что ещё можно добавить</h3>
         <ul>
-          <li>Выбор LLM перед отправкой вопроса (GigaChat или YandexGPT)</li>
-          <li>Отправка текстовых запросов и получение ответов от выбранной модели</li>
-          <li>Возможность задать один и тот же вопрос обеим моделям по очереди</li>
-          <li>Сравнение качества, стиля и содержания ответов</li>
-          <li>Простой и интуитивно понятный интерфейс</li>
+          <li>Поддержка Qwen, Deepseek, Gemini, OpenAI, локальных Ollama</li>
+          <li>Автоматическая оценка: скорость ответа, токсичность, фактология, стоимость в ₽ за 1000 запросов</li>
+          <li>Экспорт сравнений в Excel / Notion / Google Sheets</li>
+          <li>Веб-дашборд с графиками: динамика качества, расход токенов, рейтинг моделей</li>
+          <li>Интеграция с RAG: сравнивать, как модели работают с вашей внутренней базой знаний</li>
         </ul>
       </div>
 
       <div class="detail-section">
-        <h3>🤝 Поддерживаемые LLM</h3>
-        <div class="llm-comparison">
-          <div class="llm-card">
-            <div class="llm-icon">🟢</div>
-            <div class="llm-name">GigaChat</div>
-            <div class="llm-desc">LLM от Сбера. Поддерживает русский язык, работает через API.</div>
-          </div>
-          <div class="llm-card">
-            <div class="llm-icon">🔵</div>
-            <div class="llm-name">YandexGPT</div>
-            <div class="llm-desc">LLM от Яндекса. Генерация текста, диалоговый режим, API.</div>
-          </div>
-        </div>
-        <p style="margin-top: 20px;"><em>По желанию можно добавить другие LLM (например, Qwen, Deepseek, Kimi, MiniMax).</em></p>
+        <h3>От вас потребуется:</h3>
+        <ul>
+          <li><strong>Список моделей для подключения:</strong> API-ключи, документация, лимиты</li>
+          <li><strong>Критерии сравнения:</strong> скорость, точность, стиль, цена, безопасность, 152-ФЗ</li>
+          <li><strong>Цель:</strong> внутреннее тестирование / клиентское демо / роутинг запросов / обучение</li>
+        </ul>
       </div>
 
       <div class="detail-section">
-        <h3>💡 Сценарии использования</h3>
+        <h3>📅 Сроки и бюджет</h3>
+        <p><strong>Сроки:</strong> 3–5 рабочих дней</p>
+        <p><strong>Бюджет:</strong> от 10 000 ₽ (базовая версия с 2–3 моделями)</p>
+        <p><strong>Не входит:</strong> Аренда сервера, оплата API-токенов, сложный веб-интерфейс (если не оговорено), рекламное продвижение</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>💳 Оплата — как удобно</h3>
         <ul>
-          <li><strong>Сравнение моделей:</strong> Оценить, какая LLM лучше справляется с вашими задачами</li>
-          <li><strong>Тестирование:</strong> Проверить качество ответов разных моделей на одинаковые запросы</li>
-          <li><strong>Образование:</strong> Показать студентам различия в подходах разных LLM</li>
-          <li><strong>Демо:</strong> Наглядно продемонстрировать возможности различных языковых моделей</li>
+          <li><strong>Разово:</strong> 30–50% предоплата → демо на моём сервере → сдача → остаток</li>
+          <li><strong>Подписка:</strong> 15% от стоимости/мес (мин. 5 000 ₽) — бот работает сразу, выкупаете когда готовы</li>
+          <li><strong>Исходный код + инструкция:</strong> по развёртыванию — ваши после полной оплаты</li>
         </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔹 Поддержка и правки</h3>
+        <ul>
+          <li>✅ <strong>На подписке:</strong> правки, баги, доработки, подключение новых моделей — за мой счёт, приоритет в очереди</li>
+          <li>✅ <strong>После выкупа:</strong> 14 дней гарантии на баги с моей стороны → потом ремонт по мере свободного времени (символическая плата)</li>
+          <li>🚀 <strong>Вне очереди?</strong> Подключите сопровождение от 1 500 ₽/мес — откладываю всё, чиню ваш проект сразу</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔹 Связь</h3>
+        <p>Обычно отвечаю в течение часа. Если молчу — значит, в коде. Напишу, как освобожусь.</p>
+        <p style="margin-top: 16px;"><a href="https://t.me/ValerV9" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">✏️ Написать в Telegram</a></p>
       </div>
 
       <div class="detail-section">
@@ -133,16 +165,6 @@
             <img src="screenshots/6.jpg" alt="MultiModel Bot — скриншот 6" />
           </div>
         </div>
-      </div>
-
-      <div class="detail-section">
-        <h3>🛠️ Технологии</h3>
-        <ul>
-          <li><strong>Язык:</strong> Python</li>
-          <li><strong>Интерфейс:</strong> Telegram Bot API</li>
-          <li><strong>LLM:</strong> GigaChat API, YandexGPT API</li>
-          <li><strong>Развёртывание:</strong> Гибкое (локально или на сервере)</li>
-        </ul>
       </div>
 
       <div class="nav">
