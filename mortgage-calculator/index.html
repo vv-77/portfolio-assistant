@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ипотечный калькулятор</title>
+  <title>Ипотечный калькулятор — Универсальный движок расчётов</title>
   <style>
     body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #f8fafc; color: #111827; }
     .page { max-width: 860px; margin: auto; padding: 32px 24px; }
@@ -26,16 +26,85 @@
   <main class="page">
     <div class="breadcrumbs"><a href="../index.html">Главная</a> → <a href="../projects.html">Каталог проектов</a> → Ипотечный калькулятор</div>
     <span class="badge">Проект</span>
-    <h1>Ипотечный калькулятор</h1>
-    <p>Веб-кейс с расчётом ипотечного платежа, графиком и экспортом данных в Excel. Демонстрация доступна в папке <code>portfolio/mortgage-calculator</code>.</p>
+    <h1>Ипотечный калькулятор — Универсальный движок расчётов</h1>
+    <p>Веб-инструмент для точного расчёта платежей, построения графиков и экспорта данных. Изначально настроен под ипотеку, но архитектура — универсальный «калькулятор-конструктор»: меняете формулы → получаете инструмент под любую нишу.</p>
+    
     <section>
-      <h2>Особенности</h2>
+      <h2>Стек</h2>
+      <p>Python 3.11+ + FastAPI/Flask + pandas/openpyxl (расчёты + Excel) + HTML5/CSS3/JS (Vanilla) + адаптивная вёрстка</p>
+    </section>
+
+    <section>
+      <h2>🔹 Хотите такой же, но под вашу задачу?</h2>
+      <p>Это не просто «ипотечный калькулятор». Это гибкий движок расчётов, который адаптируется под любую сферу, где есть формулы, параметры и результат.</p>
+    </section>
+
+    <section>
+      <h2>🔄 Подо что можно изменить:</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+        <tr style="background: #e2e8f0;"><th style="padding: 10px; text-align: left; border: 1px solid #cbd5e1;">Ниша</th><th style="padding: 10px; text-align: left; border: 1px solid #cbd5e1;">Что считаем</th><th style="padding: 10px; text-align: left; border: 1px solid #cbd5e1;">Что выдаём</th></tr>
+        <tr><td style="padding: 10px; border: 1px solid #cbd5e1;"><strong>Автокредит / Лизинг</strong></td><td style="padding: 10px; border: 1px solid #cbd5e1;">Платёж, переплата, график с учётом страховки/КАСКО</td><td style="padding: 10px; border: 1px solid #cbd5e1;">Таблица + график + экспорт в Excel</td></tr>
+        <tr style="background: #f1f5f9;"><td style="padding: 10px; border: 1px solid #cbd5e1;"><strong>Стройка / Ремонт</strong></td><td style="padding: 10px; border: 1px solid #cbd5e1;">Стоимость материалов, работ, сроков</td><td style="padding: 10px; border: 1px solid #cbd5e1;">Смета + список покупок + календарь</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid #cbd5e1;"><strong>Бизнес / Франшиза</strong></td><td style="padding: 10px; border: 1px solid #cbd5e1;">Окупаемость, точка безубыточности, ROI</td><td style="padding: 10px; border: 1px solid #cbd5e1;">Финмодель + чувствительность к изменениям</td></tr>
+        <tr style="background: #f1f5f9;"><td style="padding: 10px; border: 1px solid #cbd5e1;"><strong>Зарплата / Налоги</strong></td><td style="padding: 10px; border: 1px solid #cbd5e1;">НДФЛ, взносы, чистая прибыль ИП/ООО</td><td style="padding: 10px; border: 1px solid #cbd5e1;">Расчётка + сравнение режимов налогообложения</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid #cbd5e1;"><strong>Доставка / Логистика</strong></td><td style="padding: 10px; border: 1px solid #cbd5e1;">Стоимость по весу, расстоянию, тарифам</td><td style="padding: 10px; border: 1px solid #cbd5e1;">Итог + детализация + экспорт для клиента</td></tr>
+        <tr style="background: #f1f5f9;"><td style="padding: 10px; border: 1px solid #cbd5e1;"><strong>Фитнес / Питание</strong></td><td style="padding: 10px; border: 1px solid #cbd5e1;">КБЖУ, калории, план питания</td><td style="padding: 10px; border: 1px solid #cbd5e1;">Меню на неделю + список продуктов</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid #cbd5e1;"><strong>Ваша ниша</strong></td><td style="padding: 10px; border: 1px solid #cbd5e1;">Ваши формулы и параметры</td><td style="padding: 10px; border: 1px solid #cbd5e1;">Ваш калькулятор, который считает точно и красиво</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>⚙️ Что ещё можно добавить:</h2>
       <ul>
-        <li>Адаптивная верстка.</li>
-        <li>Python-модуль для точного расчёта.</li>
-        <li>Интерактивный интерфейс и экспорт данных.</li>
+        <li>Сравнение нескольких сценариев в одном интерфейсе («что если ставка 10% или 12%?»)</li>
+        <li>Визуализация: графики, диаграммы, прогресс-бары</li>
+        <li>Интеграция с 1С / CRM / платёжной системой</li>
+        <li>Сохранение расчёта в личный кабинет / отправка на почту</li>
+        <li>Мультиязычность + локализация под регион</li>
       </ul>
     </section>
+
+    <section>
+      <h2>От вас потребуется:</h2>
+      <ul>
+        <li><strong>Формулы и логика расчёта:</strong> ТЗ в свободной форме или готовый документ</li>
+        <li><strong>Параметры ввода:</strong> поля, диапазоны, обязательные/опциональные</li>
+        <li><strong>Формат вывода:</strong> таблица, график, текст, экспорт в Excel/PDF</li>
+        <li><strong>Предпочтения по дизайну:</strong> беру за основу текущую адаптивную структуру или делаю с нуля</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📅 Сроки и бюджет</h2>
+      <p><strong>Сроки:</strong> 3–5 рабочих дней</p>
+      <p><strong>Бюджет:</strong> от 8 000 ₽ (базовая версия под вашу формулу)</p>
+      <p><strong>Не входит:</strong> Аренда сервера, сложный backend, дизайн «с нуля» (если не оговорено), рекламное продвижение</p>
+    </section>
+
+    <section>
+      <h2>💳 Оплата — как удобно</h2>
+      <ul>
+        <li><strong>Разово:</strong> 30–50% предоплата → демо на моём сервере → сдача → остаток</li>
+        <li><strong>Подписка:</strong> 15% от стоимости/мес (мин. 5 000 ₽) — инструмент работает сразу, выкупаете когда готовы</li>
+        <li><strong>Исходный код + инструкция:</strong> по развёртыванию — ваши после полной оплаты</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🔹 Поддержка и правки</h2>
+      <ul>
+        <li>✅ <strong>На подписке:</strong> правки, баги, доработки — за мой счёт, приоритет в очереди</li>
+        <li>✅ <strong>После выкупа:</strong> 14 дней гарантии на баги с моей стороны → потом ремонт по мере свободного времени (символическая плата)</li>
+        <li>🚀 <strong>Вне очереди?</strong> Подключите сопровождение от 1 500 ₽/мес — откладываю всё, чиню ваш проект сразу</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🔹 Связь</h2>
+      <p>Обычно отвечаю в течение часа. Если молчу — значит, в коде. Напишу, как освобожусь.</p>
+      <p style="margin-top: 16px;"><a href="https://t.me/ValerV9" target="_blank" rel="noopener" style="color: #2563eb; font-weight: 600;">✏️ Написать в Telegram</a></p>
+    </section>
+
     <section>
       <h2>Скриншоты</h2>
       <div class="screenshots">
@@ -44,6 +113,7 @@
         <img src="screenshots/03-download.png" alt="Экспорт данных ипотечного калькулятора" />
       </div>
     </section>
+
     <section>
       <h2>Где посмотреть</h2>
       <div class="links">
