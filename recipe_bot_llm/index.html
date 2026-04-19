@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ням-Ням — Бот рецептов (LLM)</title>
+  <title>Ням-Ням — AI-бот умного поиска</title>
   <style>
     body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #f8fafc; color: #111827; }
     .page { max-width: 860px; margin: auto; padding: 32px 24px; }
@@ -22,31 +22,90 @@
     .screenshots img { width: 100%; height: auto; border-radius: 18px; object-fit: cover; box-shadow: 0 12px 28px rgba(15,23,42,.12); cursor: zoom-in; }
     .screenshot-note { color: #475569; margin-top: 12px; }
     .button { text-decoration: none; background: #2563eb; color: #fff; padding: 12px 18px; border-radius: 12px; font-weight: 600; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    th, td { padding: 10px; text-align: left; border: 1px solid #cbd5e1; }
+    th { background: #e2e8f0; }
+    tr:nth-child(even) { background: #f1f5f9; }
   </style>
 </head>
 <body>
   <main class="page">
     <div class="breadcrumbs"><a href="../index.html">Главная</a> → <a href="../projects.html">Каталог проектов</a> → Ням-Ням (LLM)</div>
     <span class="badge">Проект</span>
-    <h1>Ням-Ням — Бот рецептов (Deepseek)</h1>
-    <p class="text">Telegram-бот, который предлагает рецепты, ищет по фото и работает через Deepseek API. Для портфолио важно не только код, но и понятное описание, навигация и демонстрация.</p>
+    <h1>Ням-Ням — AI-бот умного поиска (Deepseek и другие LLM)</h1>
+    <p class="text">Telegram-бот, который принимает текстовые запросы и фото, возвращает точные ответы на основе загруженной базы. Изначально настроен под рецепты и мультимодальный поиск ингредиентов, но архитектура универсальна: работает как интеллектуальный ассистент для любой предметной области.</p>
+    
     <section class="section">
-      <h2>Что делает проект</h2>
+      <h2>Стек</h2>
+      <p class="text">Python 3.11+ + aiogram 3.x + Deepseek API (или другая LLM) + Telegram Bot API + асинхронная обработка + логирование + конфиг-файл</p>
+    </section>
+
+    <section class="section">
+      <h2>🔹 Хотите такой же, но под вашу задачу?</h2>
+      <p class="text">Это не просто «бот рецептов». Это гибкая платформа умного поиска, которая заменяет ручной перебор документов и выдаёт готовые подборки, расчёты или инструкции. Архитектура легко адаптируется под автозапчасти, юриспруденцию, HR, медицину, ритейл.</p>
+    </section>
+
+    <section class="section">
+      <h2>🔹 Подо что можно изменить</h2>
+      <table>
+        <tr><th>Направление</th><th>Что делает бот</th></tr>
+        <tr><td><strong>Автозапчасти</strong></td><td>Поиск по фото детали, проверка аналогов, наличие, цена</td></tr>
+        <tr><td><strong>Юристы / Бухгалтеры</strong></td><td>Ответы по кодексам, формам, срокам сдачи отчётности</td></tr>
+        <tr><td><strong>HR / Обучение</strong></td><td>Онбординг сотрудников, ответы по регламентам, сбор заявок</td></tr>
+        <tr><td><strong>Фудтех / Рестораны</strong></td><td>Подбор блюд, подсчёт КБЖУ, экспорт списка покупок</td></tr>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>⚙️ Что ещё можно добавить</h2>
       <ul>
-        <li>Принимает текстовые запросы и возвращает рецепты.</li>
-        <li>Работает в Telegram и использует Deepseek для LLM-подсказок.</li>
-        <li>Есть поиск изображений и поддержка мультимодальных сценариев.</li>
+        <li>Замена модели на любую по вашему выбору: Qwen, Gemini, YandexGPT или локальную Ollama</li>
+        <li>Поиск по фото (распознавание объектов/ингредиентов/документов)</li>
+        <li>Подсчёт калорийности, составление меню/планов, интеграция с доставкой продуктов</li>
+        <li>Избранное, история запросов, рассылка новинок/акций</li>
       </ul>
     </section>
+
     <section class="section">
-      <h2>Технологии</h2>
+      <h2>От вас потребуется:</h2>
       <ul>
-        <li>Python</li>
-        <li>Telegram Bot API</li>
-        <li>Deepseek API</li>
-        <li>Асинхронный aiogram, логирование и файл конфигурации</li>
+        <li><strong>Источники данных:</strong> база рецептов, каталог, PDF-книги, сайт, 1С, CRM</li>
+        <li><strong>Логика работы:</strong> поиск по тексту / фото / категориям / случайная подборка</li>
+        <li><strong>Интеграции (опционально):</strong> корзина, избранное, доставка, уведомления</li>
       </ul>
     </section>
+
+    <section class="section">
+      <h2>📅 Сроки и бюджет</h2>
+      <p class="text"><strong>Сроки:</strong> 3–5 рабочих дней</p>
+      <p class="text"><strong>Бюджет:</strong> от 10 000 ₽ (базовая версия с поиском по тексту + фото)</p>
+      <p class="text"><strong>Не входит:</strong> Аренда сервера, оплата API-токенов, парсинг чужих сайтов без разрешения, дизайн меню</p>
+    </section>
+
+    <section class="section">
+      <h2>💳 Оплата — как удобно</h2>
+      <ul>
+        <li><strong>Разово:</strong> 30–50% предоплата → демо на моём сервере → сдача → остаток</li>
+        <li><strong>Подписка:</strong> 15% от стоимости/мес (мин. 5 000 ₽) — бот работает сразу, выкупаете когда готовы</li>
+        <li><strong>Исходный код + инструкция:</strong> по запуску — ваши после полной оплаты</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>🔹 Поддержка и правки</h2>
+      <ul>
+        <li>✅ <strong>На подписке:</strong> правки, баги, доработки — за мой счёт, приоритет в очереди</li>
+        <li>✅ <strong>После выкупа:</strong> 14 дней гарантии на баги с моей стороны → потом ремонт по мере свободного времени (символическая плата)</li>
+        <li>🚀 <strong>Вне очереди?</strong> Подключите сопровождение от 1 500 ₽/мес — откладываю всё, чиню ваш проект сразу</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>🔹 Связь</h2>
+      <p class="text">Обычно отвечаю в течение часа. Если молчу — значит, в коде. Напишу, как освобожусь.</p>
+      <p class="text" style="margin-top: 16px;"><a href="https://t.me/ValerV9" target="_blank" rel="noopener" style="color: #2563eb; font-weight: 600;">✏️ Написать в Telegram</a></p>
+    </section>
+
     <section class="section">
       <h2>Скриншоты</h2>
       <div class="screenshots">
@@ -54,10 +113,12 @@
         <a href="screenshots/photo_2026-04-11_11-24-25.jpg" target="_blank" rel="noopener noreferrer"><img src="screenshots/photo_2026-04-11_11-24-25.jpg" alt="Ням-Ням — экран 2" /></a>
         <a href="screenshots/photo_2026-04-11_11-24-31.jpg" target="_blank" rel="noopener noreferrer"><img src="screenshots/photo_2026-04-11_11-24-31.jpg" alt="Ням-Ням — экран 3" /></a>
       </div>
+      <p class="screenshot-note">Нажмите на миниатюру, чтобы открыть полный размер.</p>
     </section>
+
     <section class="section">
       <h2>Где посмотреть</h2>
-      <p>Описание проекта находится здесь, а полный код доступен по запросу.</p>
+      <p class="text">Описание проекта находится здесь, а полный код доступен по запросу.</p>
       <div class="links">
         <a class="button" href="../projects.html">Вернуться в каталог</a>
       </div>
