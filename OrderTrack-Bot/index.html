@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrderTrack Bot — Telegram Mini-CRM</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .page-header { padding: 100px 0 60px; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary)); text-align: center; }
+    .page-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 0 0 16px; }
+    .page-subtitle { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.75; }
+    .breadcrumbs { margin-bottom: 24px; font-size: 0.95rem; color: var(--text-secondary); }
+    .breadcrumbs a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .project-detail { max-width: 980px; margin: 0 auto; padding: 48px 24px; }
+    .detail-hero { text-align: center; margin-bottom: 48px; }
+    .detail-icon { font-size: 4rem; margin-bottom: 16px; }
+    .detail-title { font-size: 2.5rem; font-weight: 800; margin: 0 0 16px; }
+    .detail-desc { color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin: 0 auto 32px; }
+    .detail-meta { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px; }
+    .project-tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; border-radius: 999px; font-weight: 600; font-size: 0.8rem; }
+    .detail-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 24px; }
+    .detail-section h3 { margin: 0 0 16px; font-size: 1.4rem; font-weight: 700; }
+    .detail-section p { margin: 0 0 12px; color: var(--text-secondary); line-height: 1.8; }
+    .detail-section ul { padding-left: 20px; color: var(--text-secondary); }
+    .detail-section ul li { margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 12px; text-align: left; border: 1px solid var(--border); }
+    th { background: var(--bg-secondary); font-weight: 600; }
+    tr:nth-child(even) { background: var(--bg-secondary); }
+    .screenshots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
+    .screenshot-item { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .screenshot-item img { width: 100%; height: auto; display: block; transition: var(--transition); }
+    .screenshot-item:hover img { transform: scale(1.02); }
+    .nav { margin: 48px auto; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; padding: 0 24px; }
+    .nav a { color: var(--primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 999px; background: var(--bg-secondary); border: 1px solid var(--border); transition: var(--transition); }
+    .nav a:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .footer-simple { padding: 40px 0; background: var(--bg-secondary); border-top: 1px solid var(--border); }
+    .footer-content { max-width: 980px; margin: auto; padding: 0 24px; text-align: center; }
+    .footer-text { font-weight: 500; margin-bottom: 8px; }
+    .footer-subtext { font-size: 0.875rem; color: var(--text-muted); }
+    @media (max-width: 768px) { .page-header { padding: 80px 0 40px; } .page-title { font-size: 1.8rem; } .detail-title { font-size: 1.8rem; } }
+  </style>
+</head>
+<body data-theme="light">
+  <main>
+    <div class="page-header">
+      <div style="max-width: 980px; margin: auto; padding: 0 24px;">
+        <div class="breadcrumbs"><a href="../index.html">Главная</a> → <a href="../projects.html">Проекты</a> → OrderTrack Bot</div>
+        <h1 class="page-title">OrderTrack Bot — Telegram Mini-CRM для малого бизнеса</h1>
+        <p class="page-subtitle">Готовое решение для быстрого учёта клиентов, заказов и статусов прямо в Telegram</p>
+      </div>
+    </div>
+
+    <div class="project-detail">
+      <div class="detail-hero">
+        <div class="detail-icon">📱</div>
+        <h2 class="detail-title">OrderTrack Bot — Telegram Mini-CRM для малого бизнеса</h2>
+        <p class="detail-desc">Готовое решение для быстрого учёта клиентов, заказов и статусов прямо в Telegram. Пошаговый ввод данных → авто-привязка клиентов → поиск, смена статусов, экспорт в Excel. Работает на локальной SQLite, не требует сложных настроек, но спроектировано с нуля под масштабирование до SaaS-платформы.</p>
+        <div class="detail-meta">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Telegram Bot</span>
+          <span class="project-tag">CRM</span>
+          <span class="project-tag">SQLite</span>
+          <span class="project-tag">Business</span>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3>📋 Стек</h3>
+        <p>Python 3.10+ + aiogram 3.x + SQLite3 + pandas/openpyxl + FSM + .env + Docker-ready</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔹 Хотите такой же, но под вашу задачу?</h3>
+        <p>Это не просто «учебный бот». Это каркас CRM-системы для микробизнеса и самозанятых. Меняете структуру полей, добавляете уведомления, веб-панель или интеграции — и получаете автоматизированный инструмент продаж без ежемесячной платы за облачные сервисы. Все данные хранятся у вас, экспорт в Excel работает из коробки, архитектура готова к миграции на PostgreSQL и подключению AI-аналитики.</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔄 Подо что можно адаптировать</h3>
+        <table>
+          <tr><th>Ниша</th><th>Что трекаем</th><th>Что делает система</th></tr>
+          <tr><td><strong>Услуги / Ремонт</strong></td><td>Заявки, адреса, статусы, суммы</td><td>Учёт выездов, расчёт стоимости, напоминания клиентам</td></tr>
+          <tr><td><strong>Доставка / Курьеры</strong></td><td>Заказы, маршруты, статусы</td><td>Отслеживание, оптимизация, отчёты за день</td></tr>
+          <tr><td><strong>Образование / Курсы</strong></td><td>Ученики, оплаты, прогресс</td><td>Учёт посещаемости, генерация сертификатов, рассылки</td></tr>
+          <tr><td><strong>E-commerce / Маркетплейсы</strong></td><td>Заказы из WB/Ozon, возвраты</td><td>Синхронизация статусов, аналитика продаж, экспорт в 1С</td></tr>
+          <tr><td><strong>Ваша сфера</strong></td><td>Ваши данные и метрики</td><td>Ваш личный трекинг-инструмент с кастомными полями и API</td></tr>
+        </table>
+      </div>
+
+      <div class="detail-section">
+        <h3>⚙️ Что ещё можно добавить</h3>
+        <ul>
+          <li>Multi-tenant (один бот для нескольких бизнесов/менеджеров с изоляцией данных)</li>
+          <li>Веб-дашборд с графиками (продажи, конверсии, загрузка по менеджерам)</li>
+          <li>Интеграции: Bitrix24, amoCRM, 1С, Telegram-каналы, email/SMS-уведомления</li>
+          <li>AI-аналитика: авто-классификация заявок, прогноз выручки, генерация ответов клиентам</li>
+          <li>Ролевая модель (админ/менеджер/viewer) + аудит-логи действий и экспорт в PDF</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>От вас потребуется:</h3>
+        <ul>
+          <li><strong>Список полей/метрик:</strong> которые нужно фиксировать (статусы, суммы, источники)</li>
+          <li><strong>Примеры данных:</strong> или текущая таблица/Excel для миграции</li>
+          <li><strong>Требования к безопасности:</strong> и хранению (локально/облако/152-ФЗ)</li>
+          <li><strong>Режим развёртывания:</strong> Cloud (быстрый старт), Hybrid (бэкап в облако + локальная БД), Boxed (полный офлайн/интранет)</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>📅 Сроки и бюджет</h3>
+        <p><strong>Сроки:</strong> 5–7 рабочих дней</p>
+        <p><strong>Бюджет:</strong> от 25 000 ₽ (базовая настройка под ваши поля + тестирование + инструкция)</p>
+        <p><strong>Не входит:</strong> Аренда сервера, платные интеграции (CRM/1С), наполнение историей данных с нуля, кастомный дизайн веб-интерфейса, рекламное продвижение</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>💳 Оплата — как удобно</h3>
+        <ul>
+          <li><strong>Разово:</strong> 30–50% предоплата → демо на моём сервере → сдача → остаток</li>
+          <li><strong>Подписка:</strong> 15% от стоимости/мес (мин. 5 000 ₽) — бот работает сразу, выкупаете когда готовы</li>
+          <li><strong>Исходный код + инструкция:</strong> по развёртыванию и администрированию — ваши после полной оплаты</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔹 Поддержка и правки</h3>
+        <ul>
+          <li>✅ <strong>На подписке:</strong> правки, баги, доработки, обновление коннекторов — за мой счёт, приоритет в очереди</li>
+          <li>✅ <strong>После выкупа:</strong> 14 дней гарантии на баги с моей стороны → потом ремонт по мере свободного времени (символическая плата)</li>
+          <li>🚀 <strong>Вне очереди?</strong> Подключите сопровождение от 1 500 ₽/мес — откладываю всё, чиню ваш проект сразу</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔹 Связь</h3>
+        <p>Обычно отвечаю в течение часа. Если молчу — значит, в коде. Напишу, как освобожусь.</p>
+        <p style="margin-top: 16px;"><a href="https://t.me/ValerV9" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">✏️ Написать в Telegram</a></p>
+      </div>
+
+      <div class="detail-section">
+        <h3>🖼️ Скриншоты</h3>
+        <div class="screenshots-grid">
+          <div class="screenshot-item">
+            <img src="Скриншот-20-04-2026 13_52_40.jpg" alt="OrderTrack Bot — скриншот 1" />
+          </div>
+          <div class="screenshot-item">
+            <img src="Скриншот-20-04-2026 13_53_12.jpg" alt="OrderTrack Bot — скриншот 2" />
+          </div>
+          <div class="screenshot-item">
+            <img src="Скриншот-20-04-2026 13_53_45.jpg" alt="OrderTrack Bot — скриншот 3" />
+          </div>
+        </div>
+      </div>
+
+      <div class="nav">
+        <a href="../projects.html">← Назад к каталогу</a>
+        <a href="../index.html">На главную</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-simple">
+    <div class="footer-content">
+      <p class="footer-text">💼 Портфолио AI Agent Team</p>
+      <p class="footer-subtext">© 2026. Без фреймворков • Чистый код • Адаптивный дизайн</p>
+    </div>
+  </footer>
+</body>
+</html>
