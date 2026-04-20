@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataInsight PRO — Веб-приложение для авто-анализа данных</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .page-header { padding: 100px 0 60px; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary)); text-align: center; }
+    .page-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 0 0 16px; }
+    .page-subtitle { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.75; }
+    .breadcrumbs { margin-bottom: 24px; font-size: 0.95rem; color: var(--text-secondary); }
+    .breadcrumbs a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .project-detail { max-width: 980px; margin: 0 auto; padding: 48px 24px; }
+    .detail-hero { text-align: center; margin-bottom: 48px; }
+    .detail-icon { font-size: 4rem; margin-bottom: 16px; }
+    .detail-title { font-size: 2.5rem; font-weight: 800; margin: 0 0 16px; }
+    .detail-desc { color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin: 0 auto 32px; }
+    .detail-meta { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px; }
+    .project-tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; border-radius: 999px; font-weight: 600; font-size: 0.8rem; }
+    .detail-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 24px; }
+    .detail-section h3 { margin: 0 0 16px; font-size: 1.4rem; font-weight: 700; }
+    .detail-section p { margin: 0 0 12px; color: var(--text-secondary); line-height: 1.8; }
+    .detail-section ul { padding-left: 20px; color: var(--text-secondary); }
+    .detail-section ul li { margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 12px; text-align: left; border: 1px solid var(--border); }
+    th { background: var(--bg-secondary); font-weight: 600; }
+    tr:nth-child(even) { background: var(--bg-secondary); }
+    .nav { margin: 48px auto; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; padding: 0 24px; }
+    .nav a { color: var(--primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 999px; background: var(--bg-secondary); border: 1px solid var(--border); transition: var(--transition); }
+    .nav a:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .screenshots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
+    .screenshot-item { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .screenshot-item img { width: 100%; height: auto; display: block; transition: var(--transition); }
+    .screenshot-item:hover img { transform: scale(1.02); }
+    .footer-simple { padding: 40px 0; background: var(--bg-secondary); border-top: 1px solid var(--border); }
+    .footer-content { max-width: 980px; margin: auto; padding: 0 24px; text-align: center; }
+    .footer-text { font-weight: 500; margin-bottom: 8px; }
+    .footer-subtext { font-size: 0.875rem; color: var(--text-muted); }
+    @media (max-width: 768px) { .page-header { padding: 80px 0 40px; } .page-title { font-size: 1.8rem; } .detail-title { font-size: 1.8rem; } }
+  </style>
+</head>
+<body data-theme="light">
+  <main>
+    <div class="page-header">
+      <div style="max-width: 980px; margin: auto; padding: 0 24px;">
+        <div class="breadcrumbs"><a href="../index.html">Главная</a> → <a href="../projects.html">Проекты</a> → DataInsight PRO</div>
+        <h1 class="page-title">DataInsight PRO — Веб‑приложение для авто‑анализа данных и AI‑отчётов</h1>
+        <p class="page-subtitle">Автоматический анализ данных и генерация отчётов с помощью AI</p>
+      </div>
+    </div>
+
+    <div class="project-detail">
+      <div class="detail-hero">
+        <div class="detail-icon">📊</div>
+        <h2 class="detail-title">DataInsight PRO — Веб‑приложение для авто‑анализа данных и AI‑отчётов</h2>
+        <p class="detail-desc">Веб-приложение для автоматического анализа данных и генерации AI-отчётов. Загружаете данные — получаете готовые аналитические отчёты с визуализацией и выводами.</p>
+        <div class="detail-meta">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">Data Analysis</span>
+          <span class="project-tag">AI Reports</span>
+          <span class="project-tag">Visualization</span>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3>📋 Стек</h3>
+        <p>Python 3.11+ + FastAPI + pandas/openpyxl + matplotlib/plotly + LLM API (Qwen/Deepseek/Gemini) + HTML5/CSS3/JS + адаптивная вёрстка</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔹 Основные возможности</h3>
+        <ul>
+          <li>Загрузка данных в форматах Excel, CSV, JSON</li>
+          <li>Автоматический анализ структуры и качества данных</li>
+          <li>Генерация аналитических отчётов с помощью AI</li>
+          <li>Визуализация данных: графики, диаграммы, сводки</li>
+          <li>Экспорт отчётов в PDF, Excel, HTML</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔄 Под что можно адаптировать</h3>
+        <table>
+          <tr><th>Ниша</th><th>Что анализируем</th><th>Что получаем</th></tr>
+          <tr><td><strong>Бизнес-аналитика</strong></td><td>Продажи, финансы, метрики</td><td>Отчёты по KPI, тренды, прогнозы</td></tr>
+          <tr><td><strong>Маркетинг</strong></td><td>Кампании, конверсии, трафик</td><td>Анализ эффективности, рекомендации</td></tr>
+          <tr><td><strong>HR / Персонал</strong></td><td>Удовлетворённость, текучесть, Performance</td><td>Инсайты по команде, риски</td></tr>
+          <tr><td><strong>Продажи / CRM</strong></td><td>Лиды, сделки, воронка</td><td>Прогноз продаж, узкие места</td></tr>
+          <tr><td><strong>Ваша сфера</strong></td><td>Ваши данные</td><td>Ваши AI-отчёты с выводами</td></tr>
+        </table>
+      </div>
+
+      <div class="detail-section">
+        <h3>⚙️ Что ещё можно добавить</h3>
+        <ul>
+          <li>Интеграция с Google Sheets / Airtable / 1С / CRM</li>
+          <li>Автоматическая отправка отчётов по email / Telegram</li>
+          <li>Дашборд в реальном времени с обновлениями</li>
+          <li>Пользовательские шаблоны отчётов</li>
+          <li>Сравнение периодов, сценариев «что если»</li>
+          <li>Мультиязычность отчётов</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>От вас потребуется:</h3>
+        <ul>
+          <li><strong>Данные:</strong> примеры файлов (Excel, CSV) или доступ к источнику</li>
+          <li><strong>Цель анализа:</strong> какие метрики и выводы важны</li>
+          <li><strong>Формат отчёта:</strong> PDF / Excel / HTML / веб-дашборд</li>
+          <li><strong>AI-модель:</strong> предпочтения по LLM или используем по умолчанию</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>📅 Сроки и бюджет</h3>
+        <p><strong>Сроки:</strong> 5–7 рабочих дней</p>
+        <p><strong>Бюджет:</strong> от 15 000 ₽ (базовая версия с анализом + отчёт)</p>
+        <p><strong>Не входит:</strong> Аренда сервера, оплата AI-токенов, сложная интеграция с legacy-системами, дизайн с нуля</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>💳 Оплата — как удобно</h3>
+        <ul>
+          <li><strong>Разово:</strong> 30–50% предоплата → демо на моём сервере → сдача → остаток</li>
+          <li><strong>Подписка:</strong> 15% от стоимости/мес (мин. 5 000 ₽) — инструмент работает сразу, выкупаете когда готовы</li>
+          <li><strong>Исходный код + инструкция:</strong> по развёртыванию — ваши после полной оплаты</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔹 Поддержка и правки</h3>
+        <ul>
+          <li>✅ <strong>На подписке:</strong> правки, баги, доработки, обновление под новые данные — за мой счёт, приоритет в очереди</li>
+          <li>✅ <strong>После выкупа:</strong> 14 дней гарантии на баги с моей стороны → потом ремонт по мере свободного времени (символическая плата)</li>
+          <li>🚀 <strong>Вне очереди?</strong> Подключите сопровождение от 1 500 ₽/мес — откладываю всё, чиню ваш проект сразу</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔹 Связь</h3>
+        <p>Обычно отвечаю в течение часа. Если молчу — значит, в коде. Напишу, как освобожусь.</p>
+        <p style="margin-top: 16px;"><a href="https://t.me/ValerV9" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">✏️ Написать в Telegram</a></p>
+      </div>
+
+      <div class="detail-section">
+        <h3>📁 Примеры отчётов</h3>
+        <p>PDF-отчёты, сгенерированные разными LLM:</p>
+        <ul>
+          <li><a href="datainsight-report-Гигачат.pdf" style="color: var(--primary);" target="_blank">📄 Отчёт от GigaChat</a></li>
+          <li><a href="datainsight-report-Дипсик.pdf" style="color: var(--primary);" target="_blank">📄 Отчёт от Deepseek</a></li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>🖼️ Скриншоты</h3>
+        <div class="screenshots-grid">
+          <div class="screenshot-item">
+            <img src="Скриншот-20-04-2026 09_56_39.jpg" alt="DataInsight PRO — скриншот 1" />
+          </div>
+          <div class="screenshot-item">
+            <img src="Скриншот-20-04-2026 09_57_13.jpg" alt="DataInsight PRO — скриншот 2" />
+          </div>
+          <div class="screenshot-item">
+            <img src="Скриншот-20-04-2026 09_57_40.jpg" alt="DataInsight PRO — скриншот 3" />
+          </div>
+          <div class="screenshot-item">
+            <img src="Скриншот-20-04-2026 09_58_00.jpg" alt="DataInsight PRO — скриншот 4" />
+          </div>
+          <div class="screenshot-item">
+            <img src="Скриншот-20-04-2026 09_58_24.jpg" alt="DataInsight PRO — скриншот 5" />
+          </div>
+        </div>
+      </div>
+
+      <div class="nav">
+        <a href="../projects.html">← Назад к каталогу</a>
+        <a href="../index.html">На главную</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-simple">
+    <div class="footer-content">
+      <p class="footer-text">💼 Портфолио AI Agent Team</p>
+      <p class="footer-subtext">© 2026. Без фреймворков • Чистый код • Адаптивный дизайн</p>
+    </div>
+  </footer>
+</body>
+</html>
