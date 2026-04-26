@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Post Agent — Генератор постов для соцсетей</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .page-header { padding: 100px 0 60px; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary)); text-align: center; }
+    .page-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 0 0 16px; }
+    .page-subtitle { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.75; }
+    .breadcrumbs { margin-bottom: 24px; font-size: 0.95rem; color: var(--text-secondary); }
+    .breadcrumbs a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .project-detail { max-width: 980px; margin: 0 auto; padding: 48px 24px; }
+    .detail-hero { text-align: center; margin-bottom: 48px; }
+    .detail-icon { font-size: 4rem; margin-bottom: 16px; }
+    .detail-title { font-size: 2.5rem; font-weight: 800; margin: 0 0 16px; }
+    .detail-desc { color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin: 0 auto 32px; }
+    .detail-meta { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px; }
+    .project-tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; border-radius: 999px; font-weight: 600; font-size: 0.8rem; }
+    .detail-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 24px; }
+    .detail-section h3 { margin: 0 0 16px; font-size: 1.4rem; font-weight: 700; }
+    .detail-section p { margin: 0 0 12px; color: var(--text-secondary); line-height: 1.8; }
+    .detail-section ul { padding-left: 20px; color: var(--text-secondary); }
+    .detail-section ul li { margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 12px; text-align: left; border: 1px solid var(--border); }
+    th { background: var(--bg-secondary); font-weight: 600; }
+    tr:nth-child(even) { background: var(--bg-secondary); }
+    .screenshots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
+    .screenshot-item { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .screenshot-item img { width: 100%; height: auto; display: block; transition: var(--transition); }
+    .screenshot-item:hover img { transform: scale(1.02); }
+    .nav { margin: 48px auto; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; padding: 0 24px; }
+    .nav a { color: var(--primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 999px; background: var(--bg-secondary); border: 1px solid var(--border); transition: var(--transition); }
+    .nav a:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .footer-simple { padding: 40px 0; background: var(--bg-secondary); border-top: 1px solid var(--border); }
+    .footer-content { max-width: 980px; margin: auto; padding: 0 24px; text-align: center; }
+    .footer-text { font-weight: 500; margin-bottom: 8px; }
+    .footer-subtext { font-size: 0.875rem; color: var(--text-muted); }
+    @media (max-width: 768px) { .page-header { padding: 80px 0 40px; } .page-title { font-size: 1.8rem; } .detail-title { font-size: 1.8rem; } }
+  </style>
+</head>
+<body data-theme="light">
+  <main>
+    <div class="page-header">
+      <div style="max-width: 980px; margin: auto; padding: 0 24px;">
+        <div class="breadcrumbs"><a href="../index.html">Главная</a> → <a href="../projects.html">Проекты</a> → Web Post Agent</div>
+        <h1 class="page-title">Web Post Agent — Генератор постов для соцсетей</h1>
+        <p class="page-subtitle">Готовое веб-решение для автоматической генерации постов по ссылке на статью</p>
+      </div>
+    </div>
+
+    <div class="project-detail">
+      <div class="detail-hero">
+        <div class="detail-icon">📱</div>
+        <h2 class="detail-title">Web Post Agent — Генератор постов для соцсетей</h2>
+        <p class="detail-desc">Готовое веб-решение для автоматической генерации готовых к публикации постов по ссылке на статью. Ввод URL → выбор тональности → чистый текст до 800 символов за 3 секунды. Клиентский счётчик, кнопка копирования, умная обрезка без обрывов, безопасное хранение ключей. Работает на локальном Flask-сервере, не требует сложных настроек, но спроектирован с нуля под масштабирование до SaaS-платформы или Telegram-бота.</p>
+        <div class="detail-meta">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Flask</span>
+          <span class="project-tag">OpenAI API</span>
+          <span class="project-tag">SMM</span>
+          <span class="project-tag">Content</span>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3>📋 Стек</h3>
+        <p>Python 3.10+ + Flask + OpenAI API (proxy-ready) + BeautifulSoup4 + Requests + vanilla JS/HTML5 + .env + Docker-ready</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔹 Хотите такой же, но под вашу задачу?</h3>
+        <p>Это не просто «учебный генератор». Это каркас контент-автоматизации для SMM-менеджеров, фрилансеров и микробизнеса. Меняете промпты, добавляете планировщик, интеграции с соцсетями или платёжный шлюз — и получаете инструмент регулярного постинга без ежемесячной платы за облачные сервисы. Все данные обрабатываются локально, ключи не передаются в браузер, архитектура готова к подключению мульти-модельного роутинга и AI-аналитики вовлечённости.</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔄 Подо что можно адаптировать</h3>
+        <table>
+          <tr><th>Ниша</th><th>Что обрабатываем</th><th>Что делает система</th></tr>
+          <tr><td><strong>СМИ / Блоги</strong></td><td>Новости, лонгриды, пресс-релизы</td><td>Адаптация под короткие форматы, смена тональности под аудиторию</td></tr>
+          <tr><td><strong>E-commerce</strong></td><td>Карточки товаров, акции, отзывы</td><td>Генерация продающих постов, CTA, подбор хештегов</td></tr>
+          <tr><td><strong>Личный бренд / Эксперты</strong></td><td>Статьи, выступления, кейсы</td><td>Провокационные/официальные тезисы, вирусные подводки, форматирование</td></tr>
+          <tr><td><strong>Контент-студии</strong></td><td>ТЗ, референсы, конкуренты</td><td>Пакетная генерация, экспорт в буфер/файл, история версий</td></tr>
+          <tr><td><strong>Ваша сфера</strong></td><td>Ваши источники</td><td>Кастомные промпты, бренд-гайды, API-интеграция в ваши процессы</td></tr>
+        </table>
+      </div>
+
+      <div class="detail-section">
+        <h3>⚙️ Что ещё можно добавить</h3>
+        <ul>
+          <li>Telegram-бот с лимитами, подписочной моделью и реферальной системой</li>
+          <li>Веб-дашборд с историей генераций, статистикой по стилям, экспортом в Excel/CSV</li>
+          <li>Multi-model routing (авто-переключение на дешёвую модель для черновиков, GPT-4o для финала)</li>
+          <li>Интеграции: Buffer, Notion, Google Sheets, VK/Telegram API для автопостинга</li>
+          <li>Ролевая модель (админ/контент-менеджер/редактор) + аудит-логи + white-label брендинг</li>
+          <li>Авто-генерация изображений (DALL-E/Imagen) под каждый пост</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>От вас потребуется:</h3>
+        <ul>
+          <li><strong>Список целевых площадок:</strong> и 3–5 примеров постов (референсы тональности)</li>
+          <li><strong>Бренд-гайд:</strong> или словарь запрещённых/обязательных фраз</li>
+          <li><strong>Требования к развёртыванию:</strong> локально, VPS, облако, Docker</li>
+          <li><strong>Режим работы:</strong> Автономный генератор, SaaS-подписка, или API для встраивания</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>📅 Сроки и бюджет</h3>
+        <p><strong>Сроки:</strong> 3–5 рабочих дней</p>
+        <p><strong>Бюджет:</strong> от 15 000 ₽ (базовая настройка под ваши стили + тестирование + инструкция)</p>
+        <p><strong>Не входит:</strong> Оплата токенов OpenAI/прокси, аренда сервера, кастомный UI/UX дизайн, наполнение историей данных, юридическое сопровождение авторских прав</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>💳 Оплата — как удобно</h3>
+        <ul>
+          <li><strong>Разово:</strong> 30–50% предоплата → демо на моём сервере → сдача → остаток</li>
+          <li><strong>Подписка:</strong> 15% от стоимости/мес (мин. 5 000 ₽) — инструмент работает сразу, выкупаете когда готовы</li>
+          <li><strong>Исходный код + инструкция:</strong> по развёртыванию и администрированию — ваши после полной оплаты</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔹 Поддержка и правки</h3>
+        <ul>
+          <li>✅ <strong>На подписке:</strong> правки, баги, доработки, обновление коннекторов — за мой счёт, приоритет в очереди</li>
+          <li>✅ <strong>После выкупа:</strong> 14 дней гарантии на баги с моей стороны → потом ремонт по мере свободного времени (символическая плата)</li>
+          <li>🚀 <strong>Вне очереди?</strong> Подключите сопровождение от 1 500 ₽/мес — откладываю всё, чиню ваш проект сразу</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>🔹 Связь</h3>
+        <p>Обычно отвечаю в течение часа. Если молчу — значит, в коде. Напишу, как освобожусь.</p>
+        <p style="margin-top: 16px;"><a href="https://t.me/ValerV9" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">✏️ Написать в Telegram</a></p>
+      </div>
+
+      <div class="detail-section">
+        <h3>🖼️ Скриншоты</h3>
+        <div class="screenshots-grid">
+          <div class="screenshot-item">
+            <img src="Скриншот-26-04-2026 08_16_15.jpg" alt="Web Post Agent — скриншот 1" />
+          </div>
+          <div class="screenshot-item">
+            <img src="Скриншот-26-04-2026 08_16_36.jpg" alt="Web Post Agent — скриншот 2" />
+          </div>
+        </div>
+      </div>
+
+      <div class="nav">
+        <a href="../projects.html">← Назад к каталогу</a>
+        <a href="../index.html">На главную</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-simple">
+    <div class="footer-content">
+      <p class="footer-text">💼 Портфолио AI Agent Team</p>
+      <p class="footer-subtext">© 2026. Без фреймворков • Чистый код • Адаптивный дизайн</p>
+    </div>
+  </footer>
+</body>
+</html>
